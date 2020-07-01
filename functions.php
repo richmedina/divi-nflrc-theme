@@ -9,8 +9,9 @@ add_action( 'wp_enqueue_scripts', 'divi__child_theme_enqueue_styles' );
 function dp_dfg_custom_query_function($query, $props) {
     if (isset($props['admin_label']) && $props['admin_label'] === 'Collaborator Grid') {
         return array(
-            'post_type' => 'project',
-            'posts_per_page' => '12',
+            'post_type' => 'contact',
+            'posts_per_page' => '-1',
+            'nflrc_staff' => false,
         );
     } 
     // else {
