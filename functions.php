@@ -11,7 +11,7 @@ function dp_dfg_custom_query_function($query, $props) {
         return array(
             'post_type' => 'contact',
             'posts_per_page' => '5',
-            'nflrc_staff' => true,
+            'nflrc_staff' => 't',
         );
     } 
     // else {
