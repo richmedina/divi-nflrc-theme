@@ -10,8 +10,8 @@ function dp_dfg_custom_query_function($query, $props) {
     if (isset($props['admin_label']) && $props['admin_label'] === 'Collaborator Grid') {
         return array(
             'post_type' => 'contact',
-            'posts_per_page' => '2',
-            'nflrc_staff' => 0,
+            'posts_per_page' => '5',
+            'nflrc_staff' => 1,
         );
     } 
     // else {
