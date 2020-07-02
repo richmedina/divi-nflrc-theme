@@ -12,7 +12,7 @@ function dp_dfg_custom_query_function($query, $props) {
             'post_type' => 'contact',
             'posts_per_page' => -1,
             'meta_query' => array(
-            	'relation' => 'OR',
+            	'relation' => 'AND',
             	array('key'=>'nflrc_staff','compare'=>'!=','value'=>1),
             	array('key'=>'nflrc_role_type','compare'=>'!=','value'=>'Advisory Board'),
             ),
