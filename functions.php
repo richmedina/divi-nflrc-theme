@@ -18,11 +18,14 @@ function dp_dfg_custom_query_function($query, $props) {
             ),
         );
     } 
-    // else {
-    //     return array(
-    //         'post_type' => 'post',
-    //         'posts_per_page' => '12',
-    //     );
-    // }
+    else if (isset($props['admin_label']) && $props['admin_label'] === 'Advisory Board') {
+        return array(
+            'post_type' => 'contact',
+            'posts_per_page' => -1,
+            'meta_query' => array(            	
+            	array('key'=>'nflrc_role_type','value'=>'ADVBOARD'),
+            ),
+        );
+    } 
 }
 add_filter('dpdfg_custom_query_args', 'dp_dfg_custom_query_function', 10, 2);
