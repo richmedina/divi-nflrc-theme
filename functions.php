@@ -14,7 +14,7 @@ function dp_dfg_custom_query_function($query, $props) {
             'meta_query' => array(
             	
             	array('key'=>'nflrc_staff','compare'=>'!=','value'=>1),
-            	array('key'=>'nflrc_role_type','compare'=>'!=','value'=>'Advisory Board'),
+            	array('key'=>'nflrc_role_type','compare'=>'!=','value'=>'ADVBOARD'),
             ),
         );
     } 
