@@ -11,8 +11,7 @@ function dp_dfg_custom_query_function($query, $props) {
         return array(
             'post_type' => 'contact',
             'posts_per_page' => -1,
-            'meta_query' => array(
-            	
+            'meta_query' => array(            	
             	array('key'=>'nflrc_staff','compare'=>'!=','value'=>1),
             	array('key'=>'nflrc_role_type','compare'=>'!=','value'=>'ADVBOARD'),
             ),
@@ -29,3 +28,8 @@ function dp_dfg_custom_query_function($query, $props) {
     } 
 }
 add_filter('dpdfg_custom_query_args', 'dp_dfg_custom_query_function', 10, 2);
+
+add_shortcode('featured_img', 'featured_img_func');
+function featured_img_func($atts, $content = null) {
+    return get_the_post_thumbnail();
+}
