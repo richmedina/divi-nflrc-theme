@@ -21,6 +21,7 @@
 }
 .tocbtn {
 	overflow-wrap: break-word;
+	color: black;
 }
 .active {
 	background: rgb(214,185,235);
