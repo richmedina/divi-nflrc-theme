@@ -13,10 +13,8 @@ p a:hover {text-decoration: none; background-color: #b4e7f8}
 p a:active {text-decoration: none;}
 
 
-.nav {
-	font-size:90%;
-	
-}
+
+
 
 /* HEADINGS */
 h1, h2 {
@@ -347,6 +345,17 @@ a:active {color: #1aa1e1; text-decoration: none;}*/
 */
 
 /*NFLRC FLEXIBLE PILLS*/
+
+.nav {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  font-size:90%;
+}
+.nav > li {
+  position: relative;
+  display: block;
+}
 
 .nav-pills-flex {
     font-family: 'Open Sans', sans-serif;
