@@ -301,49 +301,6 @@ a:active {color: #1aa1e1; text-decoration: none;}*/
 .badge_languages_fill { background-color: #fb8521; }
 .badge_other_fill { background-color: #3f5ca9; color: #fff;}
 
-
-
-
-/*NFLRC STYLE STARTS
-.nav-pills-red > li.active > a, .nav-pills-red > li.active > a:hover, .nav-pills-red > li.active > a:focus {
-    background-color: #ce5043;
-    color: #fff;
-}
-
-
-.nav-pills-blue li a:link {
-    color: #999;
-}
-.nav-pills-blue > li.active > a, .nav-pills-blue > li.active > a:hover, .nav-pills-blue > li.active > a:focus {
-    background-color: #1aa1e1;
-    color: #fff;
-}
-
-.nav-pills-green > li.active > a, .nav-pills-green > li.active > a:hover, .nav-pills-green > li.active > a:focus {
-    background-color: #b3c833;
-    color: #fff;
-}
-
-.nav-pills-navy > li.active > a, .nav-pills-navy > li.active > a:hover, .nav-pills-navy > li.active > a:focus {
-    background-color: #3f5ca9;
-    color: #fff;
-}
-.nav-pills-silver > li.active > a, .nav-pills-silver > li.active > a:hover, .nav-pills-silver > li.active > a:focus {
-    background-color: #658092;
-    color: #fff;
-}
-
-.nav-pills-gray > li.active > a, .nav-pills-gray > li.active > a:hover, .nav-pills-gray > li.active > a:focus {
-    background-color: #CCCCCC;
-    color: #fff;
-}
-
-.nav-pills-orange > li.active > a, .nav-pills-orange > li.active > a:hover, .nav-pills-orange > li.active > a:focus {
-    background-color: #fb8521;
-    color: #fff;
-}
-*/
-
 /*NFLRC FLEXIBLE PILLS*/
 
 .nav {
@@ -352,16 +309,14 @@ a:active {color: #1aa1e1; text-decoration: none;}*/
   list-style: none;
   font-size:90%;
 }
-.nav > li {
+/*.nav > li {
   position: relative;
   display: block;
-}
+}*/
 
 .nav-pills-flex {
     font-family: 'Open Sans', sans-serif;
     font-size:14px;
-
-
 }
 
 .nav-pills-flex li a:link {
