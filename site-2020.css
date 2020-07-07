@@ -20,7 +20,7 @@ p a:active {text-decoration: none;}
 
 /* HEADINGS */
 h1, h2 {
-    font-family: "Open Sans Condensed";
+    /*font-family: "Open Sans Condensed";*/
     text-rendering: optimizeLegibility;
 }
 
