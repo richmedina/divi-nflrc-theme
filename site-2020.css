@@ -12,10 +12,6 @@ p a:visited {text-decoration: none;}
 p a:hover {text-decoration: none; background-color: #b4e7f8}
 p a:active {text-decoration: none;}
 
-
-
-
-
 /* HEADINGS */
 h1, h2 {
     /*font-family: "Open Sans Condensed";*/
@@ -39,9 +35,7 @@ h3, .h3 {
 }
 h4, .h4 {
     font-size: 120%;
-    
 }
-
 h5, .h5 {
     font-size: 60%;
 }
@@ -50,12 +44,6 @@ h6, .h6 {
 }
 
 .separator {margin: 0px 5px 0px 5px;}
-/*Default anchor colores*/
-/*a:link {color: #1aa1e1; text-decoration: none;}
-a:visited {color: #1aa1e1; text-decoration: none;}
-a:hover {color: #999999; text-decoration: none;}
-a:active {color: #1aa1e1; text-decoration: none;}*/
-
 .adjusted-anchor{display: block; position: relative; top: -135px; visibility: hidden;}
 
 /*Default bootstrap class: label color*/
@@ -76,10 +64,6 @@ a:active {color: #1aa1e1; text-decoration: none;}*/
     color: #4343a6;
     border-radius: 10px;
     min-width:20px;
-}
-
-.footerfooter a {
-    padding-right: 10px;
 }
 
 .shadowboxed {
@@ -472,7 +456,7 @@ a:active {color: #1aa1e1; text-decoration: none;}*/
 }
 .grid_block .block_title {
     /*display: block;*/
-    font-size: 1.6em;
+/*     font-size: 1.2em; */
 }
 .grid_block img { 
     object-fit: cover;
@@ -480,6 +464,11 @@ a:active {color: #1aa1e1; text-decoration: none;}*/
 /*     margin-top: 1em; */
 }
 .grid_block.horizontal img {}
+
+.card-content ul {
+    list-style: none;
+    padding-left: 0px;
+}
 
 @media (min-width: 1024px) {
     .grid_wrap {
