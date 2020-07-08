@@ -10,19 +10,3 @@
 
 /*****Add any custom CSS below this line*****/
 
-/** TOC/Custom Post View Style **/
-.side {
-    /*position: fixed;*/
-    /*top: 0;*/
-    /*width: 200px;*/
-}
-.side > li {
-	padding: 10px;
-}
-.tocbtn {
-	overflow-wrap: break-word;
-	color: black;
-}
-.active {
-	background: rgb(214,185,235);
-}
