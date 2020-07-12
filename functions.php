@@ -40,6 +40,7 @@ function post_excerpt_func($atts, $content = null) {
         'id' => '',
     ), $atts );
     $p = get_post($a['id']);
-    $output = $p->get_the_excerpt();
+    $output = $p->post_excerpt;
+    var_dump($output);
     return $output;
 }
