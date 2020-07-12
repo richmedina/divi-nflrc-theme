@@ -33,3 +33,12 @@ add_shortcode('featured_img', 'featured_img_func');
 function featured_img_func($atts, $content = null) {
     return get_the_post_thumbnail();
 }
+
+add_shortcode('post_excerpt', 'post_excerpt_func');
+function post_excerpt_func($atts, $content = null) {
+    $a = shortcode_atts( array(
+        'id' => '',
+    ), $atts );
+    $post = get_post($a['id']);
+    return $post->get_the_excerpt();
+}
