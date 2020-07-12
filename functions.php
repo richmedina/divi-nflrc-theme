@@ -39,8 +39,7 @@ function post_excerpt_func($atts, $content = null) {
     $a = shortcode_atts( array(
         'id' => '',
     ), $atts );
-    $p = get_post($a['id']);
-    $output = $p->post_excerpt;
-    var_dump($output);
-    return $output;
+    global $post;
+    $post = get_post($a['id']);
+    return get_the_excerpt();;
 }
