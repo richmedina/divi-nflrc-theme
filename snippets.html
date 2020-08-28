@@ -1,0 +1,67 @@
+<article class="grid_block">
+    <div class="block_image">
+    	<img src="">
+    </div>
+    <div class="card">
+        <div class="block_title"></div>
+        <div class="block_body">
+        	
+		</div>
+        <div class="block_footer"></div>
+    </div>
+</article>
+
+
+<article class="">
+    <div class="">
+        <img src="">
+    </div>
+    <div class="card">
+        <div class=""></div>
+        <div class="">
+            
+        </div>
+        <div class=""></div>
+    </div>
+</article>
+
+
+<article class="grid_block %%card_layout%%">
+    <div class="block_image">
+        <img src="%%card_image%%">
+    </div>
+    <div class="card">
+        <div class="block_title">%%card_title%%</div>
+        <div class="block_body">
+            [divi_php]
+                if (function_exists('wp_trim_words')) {
+                    echo wp_trim_words($card_body, 20, ' ...');
+                } else {
+                    echo $card_body;
+                }
+            [/divi_php]
+        </div> 
+    </div>
+    <div class="block_footer">%%card_footer%%</div>
+</article>
+
+<article class="%%card_layout%%">
+    <div class="">
+        <img src="%%card_image%%">
+    </div>
+    <div class="">
+        <div class="">%%card_title%%</div>
+        <div class="">
+            [divi_php]
+                if (function_exists('wp_trim_words')) {
+                    echo wp_trim_words($card_body, 20, ' ...');
+                } else {
+                    echo $card_body;
+                }
+            [/divi_php]
+        </div>
+        <div class="">%%card_footer%%</div>
+    </div>
+</article>
+
+
