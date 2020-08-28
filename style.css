@@ -453,18 +453,22 @@ a:active {color: #1aa1e1; text-decoration: none;}*/
 }
 .grid_block.horizontal img {}
 
-.card {
+.block_card {
     display: grid;
     grid-template-rows: auto auto 1fr; /*minmax(140px, 200px)*/
     padding: 10px;	
 }
-.card ul {
+.block_card ul {
 	list-style: none;
 	padding-left: 0px;
 }
-.card li {
+.block_card li {
 	padding: 3px 0px 10px 0px;
 }
+.block_card .block_title {color:green;}
+.block_card .block_body {}
+.block_card .block_footer {}
+
 
 @media (min-width: 1024px) {
     .grid_wrap {
