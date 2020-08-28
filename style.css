@@ -465,7 +465,7 @@ a:active {color: #1aa1e1; text-decoration: none;}*/
 .block_card li {
 	padding: 3px 0px 10px 0px;
 }
-.block_card .block_title {color:green;}
+.block_card .block_title > * {color:green;}
 .block_card .block_body {}
 .block_card .block_footer {}
 
