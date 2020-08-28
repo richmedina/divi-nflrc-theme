@@ -6,7 +6,13 @@ add_action( 'wp_enqueue_scripts', 'divi__child_theme_enqueue_styles' );
  
  
 //you can add custom functions below this line:
+
+/* Custom shortcodes */
+include('nflrc-shortcodes.php');
+
+
 function dp_dfg_custom_query_function($query, $props) {
+
     if (isset($props['admin_label']) && $props['admin_label'] === 'Collaborator Grid') {
         return array(
             'post_type' => 'contact',
@@ -29,17 +35,3 @@ function dp_dfg_custom_query_function($query, $props) {
 }
 add_filter('dpdfg_custom_query_args', 'dp_dfg_custom_query_function', 10, 2);
 
-add_shortcode('featured_img', 'featured_img_func');
-function featured_img_func($atts, $content = null) {
-    return get_the_post_thumbnail();
-}
-
-add_shortcode('post_excerpt', 'post_excerpt_func');
-function post_excerpt_func($atts, $content = null) {
-    $a = shortcode_atts( array(
-        'id' => '',
-    ), $atts );
-    global $post;
-    $post = get_post($a['id']);
-    return get_the_excerpt();;
-}
