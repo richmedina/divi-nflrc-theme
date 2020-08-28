@@ -1,11 +1,5 @@
 <?php 
-/**
- * Plugin Name: xNFLRC Shortcode Lib
- * Plugin URI: 
- * Description: Specialized shortcodes for use with NFLRC Site
- * Author: RM
- * Version: 1.0
- */
+
 
 function read_nflrc_fields($post) {
 	global $post;
