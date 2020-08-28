@@ -19,10 +19,10 @@ a {
     color:#000000;
 }
 
-p a:link, .card-content a:link {text-decoration: none;  box-shadow:inset 0 -5px 0 #b4e7f8;}
-p a:visited, .card-content a:visited {text-decoration: none;}
-p a:hover, .card-content a:hover {text-decoration: none; background-color: #b4e7f8}
-p a:active, .card-content a:active {text-decoration: none;}
+p a:link, .block_card a:link {text-decoration: none;  box-shadow:inset 0 -5px 0 #b4e7f8;}
+p a:visited, .block_card a:visited {text-decoration: none;}
+p a:hover, .block_card a:hover {text-decoration: none; background-color: #b4e7f8}
+p a:active, .block_card a:active {text-decoration: none;}
 
 
 
@@ -57,7 +57,7 @@ p a:active, .card-content a:active {text-decoration: none;}
     grid-template-rows: max-content 1fr;
 }
 .grid_block.horizontal {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 3fr;
 }
 .grid_block img { 
     object-fit: cover;
