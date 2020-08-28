@@ -49,6 +49,7 @@ function read_nflrc_fields($post) {
 // 	return $data;
 // }
 
+
 add_shortcode('featured_img', 'featured_img_func');
 function featured_img_func($atts, $content = null) {
     return get_the_post_thumbnail();
