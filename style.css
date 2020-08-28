@@ -10,7 +10,7 @@
 
 /*****Add any custom CSS below this line*****/
 
-.static_a_display:link {color: #666; text-decoration: none;}
+/*.static_a_display:link {color: #666; text-decoration: none;}
 .static_a_display:visited {color: #666; text-decoration: none;}
 .static_a_display:hover {color: #000; text-decoration: none;}
 .static_a_display:active {color: #666; text-decoration: none;}
@@ -22,7 +22,7 @@ a {
 p a:link, .block_card a:link {text-decoration: none;  box-shadow:inset 0 -5px 0 #b4e7f8;}
 p a:visited, .block_card a:visited {text-decoration: none;}
 p a:hover, .block_card a:hover {text-decoration: none; background-color: #b4e7f8}
-p a:active, .block_card a:active {text-decoration: none;}
+p a:active, .block_card a:active {text-decoration: none;}*/
 
 
 
