@@ -8,7 +8,7 @@ add_action( 'wp_enqueue_scripts', 'divi__child_theme_enqueue_styles' );
 //you can add custom functions below this line:
 
 /* Custom shortcodes */
-include('nflrc-shortcodes.php');
+// include('nflrc-shortcodes.php');
 
 
 function dp_dfg_custom_query_function($query, $props) {
