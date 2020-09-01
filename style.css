@@ -57,7 +57,7 @@ p a:active, .block_card a:active {text-decoration: none;}*/
     grid-template-rows: max-content 1fr;
 }
 .grid_block.horizontal {
-    grid-template-columns: minmax(auto-fill, 3fr);
+    grid-template-columns: auto, 3fr;
 }
 .grid_block img { 
     object-fit: cover;
