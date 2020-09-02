@@ -54,7 +54,11 @@ p a:active, .block_card a:active {text-decoration: none;}*/
     display: grid;
 }
 .grid_block.vertical {
-    grid-template-rows:  minmax(130px, 230px) 3fr/*max-content 1fr;*/
+    grid-template-rows:  minmax(max-content, 170px) 3fr/*max-content 1fr;*/
+}
+.single {
+    /*card wrapper with one column:  */
+    grid-template-columns: 1fr;
 }
 .grid_block.horizontal {
     grid-template-columns: 2fr 3fr;
