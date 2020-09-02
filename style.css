@@ -81,7 +81,7 @@ p a:active, .block_card a:active {text-decoration: none;}*/
 .block_card li {
 	padding: 3px 0px 10px 0px;
 }
-.block_card .block_title > * {}
+.block_card .block_title > h3 {font-size: 1.7em}
 .block_card .block_body {}
 .block_card .block_footer {}
 
