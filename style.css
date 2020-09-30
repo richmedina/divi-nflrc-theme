@@ -72,6 +72,9 @@ p a:active, .block_card a:active {text-decoration: none;}*/
 .grid_block.horizontal .block_image img { 
     max-width: 100%;
 }
+.block_title {
+    margin-top: 5px;
+}
 .block_image {}
 .block_card {
     display: grid;
