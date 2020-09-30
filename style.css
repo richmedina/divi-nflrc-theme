@@ -90,10 +90,10 @@ p a:active, .block_card a:active {text-decoration: none;}*/
 .block_card .block_footer {}
 
 .global_footer a {
-    link {color: #fff; text-decoration: none;}
-    visited {color: #fff; text-decoration: none;}
-    hover {color: #fff; text-decoration: none; }
-    active {color: #fff; text-decoration: none;}
+    :link {color: #fff; text-decoration: none;}
+    :visited {color: #fff; text-decoration: none;}
+    :hover {color: #fff; text-decoration: none; }
+    :active {color: #fff; text-decoration: none;}
 
 }
 
