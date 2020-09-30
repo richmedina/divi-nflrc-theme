@@ -72,9 +72,7 @@ p a:active, .block_card a:active {text-decoration: none;}*/
 .grid_block.horizontal .block_image img { 
     max-width: 100%;
 }
-.block_title {
-    margin-top: 5px;
-}
+
 .block_image {}
 .block_card {
     display: grid;
@@ -88,7 +86,7 @@ p a:active, .block_card a:active {text-decoration: none;}*/
 .block_card li {
 	padding: 3px 0px 10px 0px;
 }
-.block_card .block_title > h3 {}
+.block_card .block_title > h3 {margin-top: -10px;}
 .block_card .block_body {}
 .block_card .block_footer {}
 
