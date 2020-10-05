@@ -276,17 +276,20 @@ function nflrc_debug_func() {
 		        $the_query->the_post();
 		        $title = $post->post_title;
 		        $p_id = strval($post->ID);
+		        $output[$p_id] = $title;
 		        
-		        // $term_ids = wp_set_post_terms($post->ID, $t, 'grant_period', true);
 		        $terms = get_the_term_list($post->ID, 'grant_period');
 		        $lang = $post->language;
-		        $output[$p_id] = $title;
+		        
+
+		        $term_ids = wp_set_post_terms($post->ID, $t, 'grant_period', true);
 
 		        // update_post_meta( $p_id, 'nflrc_staff', false );
 		        // $post->nflrc_staff = false;
 		        // $is_staff = $post->nflrc_staff;
-
-		        $debugstr .= "<div>{$lang} | {$title} | {$p_id} | {$term_ids} | {$terms}</div>";
+		        if($lang) {
+		        	$debugstr .= "<div>{$lang} | {$title} | {$p_id} | {$term_ids} | {$terms}</div>";
+		        }
 		        /*$debugstr .= "<article class='grid_block'>";
 				$debugstr .= "<div>{}</div>";
 				$debugstr .= "<div class='card'>";
