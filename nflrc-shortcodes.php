@@ -278,12 +278,13 @@ function nflrc_debug_func() {
 		        $p_id = strval($post->ID);
 		        $output[$p_id] = $title;
 		        
-		        $terms = get_the_term_list($post->ID, 'language');
+		        
 		        $lang = $post->language;
 		        
 		        if($lang) {
 		        	$term_ids = wp_set_post_terms($post->ID, $lang, 'language', false);
 		        }
+		        $terms = get_the_term_list($post->ID, 'language');
 		        // update_post_meta( $p_id, 'nflrc_staff', false );
 		        // $post->nflrc_staff = false;
 		        // $is_staff = $post->nflrc_staff;
