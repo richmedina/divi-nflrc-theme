@@ -278,7 +278,7 @@ function nflrc_debug_func() {
 		        $p_id = strval($post->ID);
 		        $output[$p_id] = $title;
 		        
-		        $terms = get_the_term_list($post->ID, 'grant_period');
+		        $terms = get_the_term_list($post->ID, 'language');
 		        $lang = $post->language;
 		        
 		        if($lang) {
