@@ -263,8 +263,8 @@ function nflrc_contact_grid_func($atts, $content = null) {
 add_shortcode('nflrc_debug', 'nflrc_debug_func');
 function nflrc_debug_func() {
 		$args = array(
-		    'post_type' => array( 'project' ),
-		    'tag' => '2018-2022',	
+		    'post_type' => array( 'project', 'publication' ),
+		    'tag' => '1990-1993',	
 		);
 		$the_query = new WP_Query( $args );
 		$output = array();
