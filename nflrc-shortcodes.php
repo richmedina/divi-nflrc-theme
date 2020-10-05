@@ -294,7 +294,7 @@ function nflrc_debug_func() {
 		} else {
 			$output = array(); 
 		}
-		// var_dump($output);
+		var_dump($output);
 		return $debugstr;
 }
 
