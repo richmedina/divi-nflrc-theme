@@ -262,7 +262,7 @@ function nflrc_contact_grid_func($atts, $content = null) {
 
 add_shortcode('nflrc_debug', 'nflrc_debug_func');
 function nflrc_debug_func() {
-		$t = '2006-2010';
+		$t = '2010-2014';
 		$args = array(
 		    'post_type' => array('project', 'prodev', 'publication', 'contact', 'story'),
 		    'tag' => $t,
@@ -278,7 +278,7 @@ function nflrc_debug_func() {
 		        $title = $post->post_title;
 		        $p_id = strval($post->ID);
 		        
-		        $term_ids = wp_set_post_terms($post->ID, $t, 'grant_period');
+		        $term_ids = wp_set_post_terms($post->ID, $t, 'grant_period', true);
 		        $terms = get_the_term_list($post->ID, 'grant_period');
 		        $output[$p_id] = $title;
 
