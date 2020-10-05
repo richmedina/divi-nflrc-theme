@@ -264,7 +264,7 @@ add_shortcode('nflrc_debug', 'nflrc_debug_func');
 function nflrc_debug_func() {
 		$args = array(
 		    'post_type' => array( 'project' ),
-		    'tag' => '1990-1993',	
+		    'tag' => '2018-2022',	
 		);
 		$the_query = new WP_Query( $args );
 		$output = array();
