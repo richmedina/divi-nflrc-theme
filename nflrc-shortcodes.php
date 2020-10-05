@@ -265,7 +265,6 @@ function nflrc_debug_func() {
 		$t = '2018-2022';
 		$args = array(
 		    'post_type' => array('project', 'prodev', 'publication', 'contact', 'story'),
-		    'tag' => $t,
 		    'posts_per_page' 	=> -1,
 		);
 		$the_query = new WP_Query( $args );
@@ -278,15 +277,16 @@ function nflrc_debug_func() {
 		        $title = $post->post_title;
 		        $p_id = strval($post->ID);
 		        
-		        $term_ids = wp_set_post_terms($post->ID, $t, 'grant_period', true);
+		        // $term_ids = wp_set_post_terms($post->ID, $t, 'grant_period', true);
 		        $terms = get_the_term_list($post->ID, 'grant_period');
+		        $lang = $post->language;
 		        $output[$p_id] = $title;
 
 		        // update_post_meta( $p_id, 'nflrc_staff', false );
 		        // $post->nflrc_staff = false;
 		        // $is_staff = $post->nflrc_staff;
 
-		        $debugstr .= "<div>{$title} | {$p_id} | {$term_ids} | {$terms}</div>";
+		        $debugstr .= "<div>{$lang} | {$title} | {$p_id} | {$term_ids} | {$terms}</div>";
 		        /*$debugstr .= "<article class='grid_block'>";
 				$debugstr .= "<div>{}</div>";
 				$debugstr .= "<div class='card'>";
