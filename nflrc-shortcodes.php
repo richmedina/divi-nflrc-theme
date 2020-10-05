@@ -265,6 +265,7 @@ function nflrc_debug_func() {
 		$t = '2018-2022';
 		$args = array(
 		    'post_type' => array('project', 'prodev', 'publication', 'contact', 'story'),
+		    'tag' => $t,
 		    'posts_per_page' 	=> -1,
 		);
 		$the_query = new WP_Query( $args );
@@ -281,10 +282,10 @@ function nflrc_debug_func() {
 		        
 		        $lang = $post->language;
 		        
-		        if($lang) {
-		        	$term_ids = wp_set_post_terms($post->ID, $lang, 'language', false);
-		        }
-		        $terms = get_the_term_list($post->ID, 'language');
+		        // if($lang) {
+		        	$term_ids = wp_set_post_terms($post->ID, $t, 'grant_period', true);
+		        // }
+		        $terms = get_the_term_list($post->ID, 'grant_period');
 		        // update_post_meta( $p_id, 'nflrc_staff', false );
 		        // $post->nflrc_staff = false;
 		        // $is_staff = $post->nflrc_staff;
