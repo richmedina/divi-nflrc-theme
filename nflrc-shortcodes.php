@@ -262,7 +262,7 @@ function nflrc_contact_grid_func($atts, $content = null) {
 
 add_shortcode('nflrc_debug', 'nflrc_debug_func');
 function nflrc_debug_func() {
-		$t = '1996-1999';
+		$t = '1999-2002';
 		$args = array(
 		    'post_type' => array('project', 'prodev', 'publication', 'contact', 'story'),
 		    'tag' => $t,
