@@ -262,10 +262,10 @@ function nflrc_contact_grid_func($atts, $content = null) {
 
 add_shortcode('nflrc_debug', 'nflrc_debug_func');
 function nflrc_debug_func() {
-		$t = '2018-2022';
+		$tg = '2018-2022';
 		$args = array(
 		    'post_type' => array('project', 'prodev', 'publication', 'contact', 'story'),
-		    'tag' => $t,	
+		    'tag' => $tg,	
 		);
 		$the_query = new WP_Query( $args );
 		$output = array();
@@ -281,7 +281,7 @@ function nflrc_debug_func() {
 
 		        // update_post_meta( $p_id, 'nflrc_staff', false );
 		        // $post->nflrc_staff = false;
-		        $is_staff = $post->nflrc_staff;
+		        // $is_staff = $post->nflrc_staff;
 
 		        $debugstr .= "<div>{$title} | {$p_id} | {$terms}</div>";
 		        /*$debugstr .= "<article class='grid_block'>";
