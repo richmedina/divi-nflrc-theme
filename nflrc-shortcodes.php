@@ -265,7 +265,8 @@ function nflrc_debug_func() {
 		$tg = '2018-2022';
 		$args = array(
 		    'post_type' => array('project', 'prodev', 'publication', 'contact', 'story'),
-		    'tag' => $tg,	
+		    'tag' => $tg,
+		    'posts_per_page' 	=> -1,
 		);
 		$the_query = new WP_Query( $args );
 		$output = array();
