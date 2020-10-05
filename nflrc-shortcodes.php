@@ -276,7 +276,7 @@ function nflrc_debug_func() {
 		        $the_query->the_post();
 		        $title = $post->post_title;
 		        $p_id = strval($post->ID);
-		        $terms = get_terms();
+		        $terms = get_the_terms($post->ID, 'post_tag');
 		        $output[$p_id] = $title;
 
 		        // update_post_meta( $p_id, 'nflrc_staff', false );
