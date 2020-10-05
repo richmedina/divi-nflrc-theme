@@ -278,7 +278,7 @@ function nflrc_debug_func() {
 		        $title = $post->post_title;
 		        $p_id = strval($post->ID);
 		        
-		        $term_ids = wp_set_post_terms($post->ID, $t, 'grant_period')
+		        $term_ids = wp_set_post_terms($post->ID, $t, 'grant_period');
 		        $terms = get_the_term_list($post->ID, 'grant_period');
 		        $output[$p_id] = $title;
 
