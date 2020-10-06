@@ -281,9 +281,9 @@ function nflrc_debug_func() {
 		        
 		        $category = $post->category;
 		        
-		        if($category) {
-		        	$term_ids = wp_set_post_terms($post->ID, $category, 'resource_type', true);
-		        }
+		        // if($category) {
+		        // 	$term_ids = wp_set_post_terms($post->ID, $category, 'resource_type', true);
+		        // }
 		        $terms = get_the_term_list($post->ID, 'resource_type');
 		        // update_post_meta( $p_id, 'nflrc_staff', false );
 		        // $post->nflrc_staff = false;
