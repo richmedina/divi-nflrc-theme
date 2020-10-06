@@ -264,7 +264,7 @@ add_shortcode('nflrc_debug', 'nflrc_debug_func');
 function nflrc_debug_func() {
 		// $t = '2018-2022';
 		$args = array(
-		    'post_type' => array('prodev'),
+		    'post_type' => array('publication'),
 		    'posts_per_page' 	=> -1,
 		);
 		$the_query = new WP_Query( $args );
@@ -279,17 +279,17 @@ function nflrc_debug_func() {
 		        $output[$p_id] = $title;
 		        
 		        
-		        $event_type = $post->event_type;
+		        $category = $post->category;
 		        
-		        if($event_type) {
-		        	$term_ids = wp_set_post_terms($post->ID, $event_type, 'resource_type', true);
+		        if($category) {
+		        	$term_ids = wp_set_post_terms($post->ID, $category, 'resource_type', true);
 		        }
 		        $terms = get_the_term_list($post->ID, 'resource_type');
 		        // update_post_meta( $p_id, 'nflrc_staff', false );
 		        // $post->nflrc_staff = false;
 		        // $is_staff = $post->nflrc_staff;
 		        
-		        $debugstr .= "<div>{$event_type} | {$title} | {$p_id} | {$term_ids} | {$terms}</div>";
+		        $debugstr .= "<div>{$category} | {$title} | {$p_id} | {$term_ids} | {$terms}</div>";
 
 		        /*$debugstr .= "<article class='grid_block'>";
 				$debugstr .= "<div>{}</div>";
