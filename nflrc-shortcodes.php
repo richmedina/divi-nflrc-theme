@@ -262,10 +262,9 @@ function nflrc_contact_grid_func($atts, $content = null) {
 
 add_shortcode('nflrc_debug', 'nflrc_debug_func');
 function nflrc_debug_func() {
-		$t = '2018-2022';
+		// $t = '2018-2022';
 		$args = array(
-		    'post_type' => array('project', 'prodev', 'publication', 'contact', 'story'),
-		    'tag' => $t,
+		    'post_type' => array('prodev'),
 		    'posts_per_page' 	=> -1,
 		);
 		$the_query = new WP_Query( $args );
@@ -280,17 +279,17 @@ function nflrc_debug_func() {
 		        $output[$p_id] = $title;
 		        
 		        
-		        $lang = $post->language;
+		        $event_type = $post->event_type;
 		        
 		        // if($lang) {
-		        	$term_ids = wp_set_post_terms($post->ID, $t, 'grant_period', true);
+		        // $term_ids = wp_set_post_terms($post->ID, $t, 'grant_period', true);
 		        // }
-		        $terms = get_the_term_list($post->ID, 'grant_period');
+		        // $terms = get_the_term_list($post->ID, 'grant_period');
 		        // update_post_meta( $p_id, 'nflrc_staff', false );
 		        // $post->nflrc_staff = false;
 		        // $is_staff = $post->nflrc_staff;
 		        
-		        $debugstr .= "<div>{$lang} | {$title} | {$p_id} | {$term_ids} | {$terms}</div>";
+		        $debugstr .= "<div>{$event_type} | {$title} | {$p_id}</div>";
 
 		        /*$debugstr .= "<article class='grid_block'>";
 				$debugstr .= "<div>{}</div>";
