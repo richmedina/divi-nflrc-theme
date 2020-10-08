@@ -96,6 +96,13 @@ p a:active, .block_card a:active {text-decoration: none;}*/
 .global_footer a:active {color: #fff; text-decoration: none;}
 
 
+.divi-grid-block article {
+    border-radius: 0 0 2px 2px;
+    overflow: hidden;
+    border-width: 4px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
 @media (min-width: 1024px) {
     .grid_wrap {
         grid-template-columns: repeat(auto-fill, 240px );
