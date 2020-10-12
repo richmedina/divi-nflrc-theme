@@ -268,7 +268,7 @@ function nflrc_debug_func() {
 		    'tax_query' => array(
 		    	'taxonomy' => 'focus_area',
             	'field'    => 'term_id',
-		    	'terms'    => array( 40,17,18,41,15,16,35,127 ),
+		    	'terms'    => array(40,17,18,41,15,16,35,127),
 		    ),
 		    'posts_per_page' 	=> -1,
 		);
@@ -289,7 +289,7 @@ function nflrc_debug_func() {
 		        // if($category) {
 		        // 	$term_ids = wp_set_post_terms($post->ID, $category, 'resource_type', true);
 		        // }
-		        $terms = get_the_term_list($post->ID, 'resource_type');
+		        $terms = get_the_term_list($post->ID);
 		        // update_post_meta( $p_id, 'nflrc_staff', false );
 		        // $post->nflrc_staff = false;
 		        // $is_staff = $post->nflrc_staff;
