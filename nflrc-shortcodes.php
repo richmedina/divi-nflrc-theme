@@ -269,6 +269,7 @@ function nflrc_debug_func() {
 		    	'taxonomy' => 'focus_area',
             	// 'field'    => 'term_id',
 		    	'terms'    => array(40,17,18,41,15,16,35,127),
+		    	'operator' => 'IN',
 		    ),
 		    'posts_per_page' 	=> -1,
 		);
