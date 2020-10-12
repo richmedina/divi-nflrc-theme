@@ -264,12 +264,12 @@ add_shortcode('nflrc_debug', 'nflrc_debug_func');
 function nflrc_debug_func() {
 		// $t = '2018-2022';
 		$args = array(
-		    'post_type' => array('project', 'prodev', 'publication', 'contact', 'story'),
+		    'post_type' => array('project'),
 		    'tax_query' => array(
 		    	'taxonomy' => 'focus_area',
             	'field'    => 'term_id',
 		    	'terms'    => array(40,17,18,41,15,16,35,127),
-		    	'operator' => 'NOT IN',
+		    	// 'operator' => 'NOT IN',
 		    ),
 		    'posts_per_page' 	=> -1,
 		);
