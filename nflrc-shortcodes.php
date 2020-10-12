@@ -281,7 +281,7 @@ function nflrc_debug_func() {
 		        $p_id = strval($post->ID);
 		        $output[$p_id] = $title;
 		        
-		        
+		        $post_type = $post->post_type;
 		        $category = $post->category;
 		        
 		        // if($category) {
@@ -292,7 +292,7 @@ function nflrc_debug_func() {
 		        // $post->nflrc_staff = false;
 		        // $is_staff = $post->nflrc_staff;
 		        
-		        $debugstr .= "<div>{$category} | {$title} | {$p_id} | {} | {$terms}</div>";
+		        $debugstr .= "<div>{$post_type} | {$category} | {$title} | {$p_id} | {} | {$terms}</div>";
 
 		        /*$debugstr .= "<article class='grid_block'>";
 				$debugstr .= "<div>{}</div>";
