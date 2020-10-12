@@ -265,7 +265,7 @@ function nflrc_debug_func() {
 		// $t = '2018-2022';
 		$args = array(
 		    'post_type' => array('project', 'prodev', 'publication', 'contact', 'story'),
-		    'tag' => array('blended-learning',
+		    'tag' => array('blended-learning'),
 		    'posts_per_page' 	=> -1,
 		);
 		$the_query = new WP_Query( $args );
