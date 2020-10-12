@@ -290,7 +290,7 @@ function nflrc_debug_func() {
 		        // $post->nflrc_staff = false;
 		        // $is_staff = $post->nflrc_staff;
 		        
-		        $debugstr .= "<div>{$category} | {$title} | {$p_id} | {$term_ids} | {$terms}</div>";
+		        $debugstr .= "<div>{$category} | {$title} | {$p_id} | {} | {$terms}</div>";
 
 		        /*$debugstr .= "<article class='grid_block'>";
 				$debugstr .= "<div>{}</div>";
