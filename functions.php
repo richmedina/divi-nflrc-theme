@@ -38,13 +38,13 @@ add_filter('dpdfg_custom_query_args', 'dp_dfg_custom_query_function', 10, 2);
 
 function dpdfg_after_read_more($content, $props) {
     if (isset($props['admin_label']) && $props['admin_label'] === 'NFLRC Items') {
-        // $d = experience_field_data(get_post());
+        $p = get_post();
 
         // $single = has_post_thumbnail() ? "" : ".single";
         // $resource_type_blk = display_as_resource_block($d['resource_type'], $d['access_link']);
-        // $description = wp_trim_words($d['description'], 20, ' ...');
+        $description = wp_trim_words($content, 20, ' ...');
 
-        $html = "hello, im here.";     
+        $html = $description;     
         // $html = "<div class='card-wrap-row{$single}'>";
         // $html .=    "<div>{$d['thumb']}</div>";  //Thumbnail column
         // $html .=    "<div class='card'>";
