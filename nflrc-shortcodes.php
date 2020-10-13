@@ -264,7 +264,7 @@ add_shortcode('nflrc_debug', 'nflrc_debug_func');
 function nflrc_debug_func() {
 		// $t = '2018-2022';
 		$args = array(
-		    'post_type' => array('project'),
+		    'post_type' => array('project', 'prodev', 'publication', 'contact', 'story'),
 		    'tax_query' => array(
 		    	array(
 		    		'taxonomy' => 'focus_area',
