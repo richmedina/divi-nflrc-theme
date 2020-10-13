@@ -265,7 +265,7 @@ function nflrc_debug_func() {
 		// $t = '2018-2022';
 		$args = array(
 		    'post_type' => array('project'),
-		    'tag__in'	=> array(40,17,18,41,15,16,35,127),
+		    'tag__in'	=> array(40),
 		    // 'tax_query' => array(
 		    // 	'taxonomy' => 'focus_area',
       //       	'field'    => 'term_id',
