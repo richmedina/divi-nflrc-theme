@@ -267,9 +267,10 @@ function nflrc_debug_func() {
 		    'post_type' => array('project', 'prodev', 'publication', 'contact', 'story'),
 		    'tax_query' => array(
 		    	array(
-		    		'taxonomy' => 'professional_learning',
+		    		'taxonomy' => 'resource_type',
             		'field'    => 'term_id',
-		    		'terms'    => array(129,131,133,32,33,130,132),
+		    		'terms'    => array(136,137,142,139,140,144,39,141,143,138,135
+),
 		    	),
 		    ),
 		    'posts_per_page' 	=> -1,
@@ -287,7 +288,7 @@ function nflrc_debug_func() {
 		        
 		        $post_type = $post->post_type;
 		        $category = $post->category;
-		        $terms = get_the_term_list($post->ID, 'professional_learning');
+		        $terms = get_the_term_list($post->ID, 'resource_type');
 		        
 		        // if($category) {
 		        // 	$term_ids = wp_set_post_terms($post->ID, $category, 'resource_type', true);
@@ -331,6 +332,10 @@ assessment
 11,12
 Professional Learning
 129,131,133,32,33,130,132
+publications
+used publication table
+resource_types
+136,137,142,139,140,144,39,141,143,138,135
 
 .dp-dfg-dropdown-tag
 background-color: #3f5ca9;
