@@ -291,12 +291,12 @@ function nflrc_debug_func() {
 		        // if($category) {
 		        // 	$term_ids = wp_set_post_terms($post->ID, $category, 'resource_type', true);
 		        // }
-		        $terms = get_the_term_list($post->ID, 'focus_area');
+		        // $terms = get_the_term_list($post->ID, 'focus_area');
 		        // update_post_meta( $p_id, 'nflrc_staff', false );
 		        // $post->nflrc_staff = false;
 		        // $is_staff = $post->nflrc_staff;
 		        
-		        $debugstr .= "<div>{$post_type} | {$category} | {$title} | {$p_id} | {} | {$terms}</div>";
+		        $debugstr .= "<div>{$post_type} | {$category} | {$title} | {$p_id} | {} | {}</div>";
 
 		        /*$debugstr .= "<article class='grid_block'>";
 				$debugstr .= "<div>{}</div>";
