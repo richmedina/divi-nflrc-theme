@@ -63,8 +63,11 @@ function dpdfg_after_read_more($content, $props) {
         // $html .=        "</div>"; //END footer
         // $html .=    "</div>"; //END card    
         // $html .= "</div>"; //END grid row
+        $html .= "<div class='inline block'>"
         $html .= get_the_term_list( $p->ID, 'category', ' ', ' ');
         $html .= get_the_term_list( $p->ID, 'focus_area', ' ', ' ');
+        $html .= "</div>"
+
         return $html;
     } 
 }
