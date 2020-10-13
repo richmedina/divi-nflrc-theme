@@ -323,6 +323,19 @@ wp_set_post_terms
 
 Get posts with tag:
 $query = new WP_Query( array( 'tag' => 'cooking' ) );
+
+
+pedagogy
+40,17,18,41,15,16,35,127
+assessment
+11,12
+Professional Learning
+129,131,133,32,33,130,132
+
+.dp-dfg-dropdown-tag
+background-color: #3f5ca9;
+color: white;
+
 */
 
 
