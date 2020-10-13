@@ -42,9 +42,9 @@ function dpdfg_after_read_more($content, $props) {
 
         // $single = has_post_thumbnail() ? "" : ".single";
         // $resource_type_blk = display_as_resource_block($d['resource_type'], $d['access_link']);
-        $description = wp_trim_words($content, 15, ' ...');
+        // $description = wp_trim_words($content, 15, ' ...');
 
-        $html = "here again";     
+        $html = "";     
         // $html = "<div class='card-wrap-row{$single}'>";
         // $html .=    "<div>{$d['thumb']}</div>";  //Thumbnail column
         // $html .=    "<div class='card'>";
@@ -63,6 +63,7 @@ function dpdfg_after_read_more($content, $props) {
         // $html .=        "</div>"; //END footer
         // $html .=    "</div>"; //END card    
         // $html .= "</div>"; //END grid row
+        $html .= get_the_term_list( $p->ID, '', ' ', ' '),
         return $html;
     } 
 }
