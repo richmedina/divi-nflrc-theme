@@ -267,9 +267,9 @@ function nflrc_debug_func() {
 		    'post_type' => array('project', 'prodev', 'publication', 'contact', 'story'),
 		    'tax_query' => array(
 		    	array(
-		    		'taxonomy' => 'focus_area',
+		    		'taxonomy' => 'professional_learning',
             		'field'    => 'term_id',
-		    		'terms'    => array(11, 12),
+		    		'terms'    => array(129,131,133,32,33,130,132),
 		    	),
 		    ),
 		    'posts_per_page' 	=> -1,
@@ -287,7 +287,7 @@ function nflrc_debug_func() {
 		        
 		        $post_type = $post->post_type;
 		        $category = $post->category;
-		        $terms = get_the_term_list($post->ID, 'focus_area');
+		        $terms = get_the_term_list($post->ID, 'professional_learning');
 		        
 		        // if($category) {
 		        // 	$term_ids = wp_set_post_terms($post->ID, $category, 'resource_type', true);
