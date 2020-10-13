@@ -267,7 +267,7 @@ function nflrc_debug_func() {
 		    'post_type' => array('project', 'prodev', 'publication', 'contact', 'story'),
 		    'tax_query' => array(
 		    	array(
-		    		'taxonomy' => 'focus_areas',
+		    		'taxonomy' => 'focus_area',
             		'field'    => 'term_id',
 		    		'terms'    => array(19),
 		    	),
@@ -288,7 +288,7 @@ function nflrc_debug_func() {
 		        
 		        $post_type = $post->post_type;
 		        $category = $post->category;
-		        $terms = get_the_term_list($post->ID, 'focus_areas');
+		        $terms = get_the_term_list($post->ID, 'focus_area');
 		        
 		        // if($category) {
 		        // 	$term_ids = wp_set_post_terms($post->ID, $category, 'resource_type', true);
