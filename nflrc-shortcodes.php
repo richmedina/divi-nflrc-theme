@@ -267,9 +267,9 @@ function nflrc_debug_func() {
 		    'post_type' => array('project', 'prodev', 'publication', 'contact', 'story'),
 		    'tax_query' => array(
 		    	array(
-		    		'taxonomy' => 'resource_type',
+		    		'taxonomy' => 'focus_areas',
             		'field'    => 'term_id',
-		    		'terms'    => array(136,137,140,144,39,135),
+		    		'terms'    => array(19),
 		    	),
 		    ),
 		    'posts_per_page' 	=> -1,
@@ -288,7 +288,7 @@ function nflrc_debug_func() {
 		        
 		        $post_type = $post->post_type;
 		        $category = $post->category;
-		        $terms = get_the_term_list($post->ID, 'resource_type');
+		        $terms = get_the_term_list($post->ID, 'focus_areas');
 		        
 		        // if($category) {
 		        // 	$term_ids = wp_set_post_terms($post->ID, $category, 'resource_type', true);
@@ -298,7 +298,7 @@ function nflrc_debug_func() {
 		        // $post->nflrc_staff = false;
 		        // $is_staff = $post->nflrc_staff;
 
-		        wp_set_post_categories( $post->ID, 155, true );
+		        // wp_set_post_categories( $post->ID, 154, true );
 		        
 		        $debugstr .= "<div>{$post_type} | {$category} | {$title} | {$p_id} | {$terms} | {}</div>";
 
@@ -336,6 +336,8 @@ publications
 used publication table
 resource_types for language teaching materials
 136,137,140,144,39,135
+research
+19
 
 .dp-dfg-dropdown-tag
 background-color: #3f5ca9;
