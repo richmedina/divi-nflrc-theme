@@ -269,7 +269,7 @@ function nflrc_debug_func() {
 		    	array(
 		    		'taxonomy' => 'focus_area',
             		'field'    => 'term_id',
-		    		'terms'    => array(40,17,18,41,15,16,35,127),//array(40,17,18,41,15,16,35,127)
+		    		'terms'    => array(11, 12),
 		    	),
 		    ),
 		    'posts_per_page' 	=> -1,
@@ -297,7 +297,7 @@ function nflrc_debug_func() {
 		        // $post->nflrc_staff = false;
 		        // $is_staff = $post->nflrc_staff;
 
-		        wp_set_post_categories( $post->ID, 150, true );
+		        // wp_set_post_categories( $post->ID, 151, true );
 		        
 		        $debugstr .= "<div>{$post_type} | {$category} | {$title} | {$p_id} | {$terms} | {}</div>";
 
