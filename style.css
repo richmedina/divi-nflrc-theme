@@ -105,7 +105,6 @@ p a:active, .block_card a:active {text-decoration: none;}*/
 
 .divi-grid-block .dp-dfg-dropdown-tag {
     background-color: #3f5ca9;
-    color: white;
 }
 
 @media (min-width: 1024px) {
