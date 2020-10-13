@@ -269,8 +269,7 @@ function nflrc_debug_func() {
 		    	array(
 		    		'taxonomy' => 'resource_type',
             		'field'    => 'term_id',
-		    		'terms'    => array(136,137,140,144,39,135)
-),
+		    		'terms'    => array(136,137,140,144,39,135),
 		    	),
 		    ),
 		    'posts_per_page' 	=> -1,
