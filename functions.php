@@ -42,7 +42,7 @@ function dpdfg_after_read_more($content, $props) {
 
         // $single = has_post_thumbnail() ? "" : ".single";
         // $resource_type_blk = display_as_resource_block($d['resource_type'], $d['access_link']);
-        $description = wp_trim_words($content, 20, ' ...');
+        $description = wp_trim_words($content, 15, ' ...');
 
         $html = $description;     
         // $html = "<div class='card-wrap-row{$single}'>";
