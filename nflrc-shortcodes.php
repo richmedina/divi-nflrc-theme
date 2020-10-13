@@ -265,13 +265,13 @@ function nflrc_debug_func() {
 		// $t = '2018-2022';
 		$args = array(
 		    'post_type' => array('project'),
-		    'tag__in'	=> array(40),
-		    // 'tax_query' => array(
-		    // 	'taxonomy' => 'focus_area',
-      //       	'field'    => 'term_id',
-		    // 	'terms'    => array(40,17,18,41,15,16,35,127),
-		    // 	// 'operator' => 'NOT IN',
-		    // ),
+		    'tax_query' => array(
+		    	array(
+		    		'taxonomy' => 'focus_area',
+            		'field'    => 'term_id',
+		    		'terms'    => array(40,18),//array(40,17,18,41,15,16,35,127)
+		    	),
+		    ),
 		    'posts_per_page' 	=> -1,
 		);
 		$the_query = new WP_Query( $args );
@@ -287,11 +287,12 @@ function nflrc_debug_func() {
 		        
 		        $post_type = $post->post_type;
 		        $category = $post->category;
+		        $terms = get_the_term_list($post->ID, 'focus_area');
 		        
 		        // if($category) {
 		        // 	$term_ids = wp_set_post_terms($post->ID, $category, 'resource_type', true);
 		        // }
-		        // $terms = get_the_term_list($post->ID, 'focus_area');
+		        
 		        // update_post_meta( $p_id, 'nflrc_staff', false );
 		        // $post->nflrc_staff = false;
 		        // $is_staff = $post->nflrc_staff;
