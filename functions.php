@@ -35,3 +35,35 @@ function dp_dfg_custom_query_function($query, $props) {
 }
 add_filter('dpdfg_custom_query_args', 'dp_dfg_custom_query_function', 10, 2);
 
+
+function dpdfg_after_read_more($content, $props) {
+    if (isset($props['admin_label']) && $props['admin_label'] === 'NFLRC Items') {
+        // $d = experience_field_data(get_post());
+
+        // $single = has_post_thumbnail() ? "" : ".single";
+        // $resource_type_blk = display_as_resource_block($d['resource_type'], $d['access_link']);
+        // $description = wp_trim_words($d['description'], 20, ' ...');
+
+        $html = "hello, im here.";     
+        // $html = "<div class='card-wrap-row{$single}'>";
+        // $html .=    "<div>{$d['thumb']}</div>";  //Thumbnail column
+        // $html .=    "<div class='card'>";
+        // $html .=        "<header class='card-header'>";
+        // $html .=            "<h4 class='card-title'><a href='{$d['link']}'>{$d['title']}</a></h4>";
+        // $html .=            $resource_type_blk;
+        // $html .=            $d['people'];
+        // $html .=        "</header>";
+        
+        // $html .=        "<div class='card-body'><div class='date_str'>{$d['start_date']}</div>{$description}</div>";
+        
+        // $html .=        "<div class='card-footer'>";
+        // $html .=            "<div class='tag-series'>{$d['series']}</div>";
+        // $html .=            "<div class='tags'>{$d['tags']}</div>";
+        // $html .=            "<div class='mod-date'><time>Updated {$d['mod_date']}</time></div>";
+        // $html .=        "</div>"; //END footer
+        // $html .=    "</div>"; //END card    
+        // $html .= "</div>"; //END grid row
+        return $html;
+    } 
+}
+add_filter('dpdfg_after_read_more', 'dpdfg_after_read_more', 10, 2);
