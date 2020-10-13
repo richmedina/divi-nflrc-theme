@@ -277,6 +277,7 @@ function nflrc_debug_func() {
 		$the_query = new WP_Query( $args );
 		$output = array();
 		$debugstr = "";
+		$debugstr .= "<h2>" . $the_query->post_count . "</h2>";
 		if ( $the_query->have_posts() ) {
 			global $post;
 		    while ( $the_query->have_posts() ) {
@@ -297,7 +298,7 @@ function nflrc_debug_func() {
 		        // $post->nflrc_staff = false;
 		        // $is_staff = $post->nflrc_staff;
 
-		        // wp_set_post_categories( $post->ID, 152, true );
+		        // wp_set_post_categories( $post->ID, 155, true );
 		        
 		        $debugstr .= "<div>{$post_type} | {$category} | {$title} | {$p_id} | {$terms} | {}</div>";
 
