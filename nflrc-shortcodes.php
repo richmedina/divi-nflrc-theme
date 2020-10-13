@@ -297,7 +297,7 @@ function nflrc_debug_func() {
 		        // $post->nflrc_staff = false;
 		        // $is_staff = $post->nflrc_staff;
 
-		        wp_set_post_categories( $post->ID, 152, true );
+		        // wp_set_post_categories( $post->ID, 152, true );
 		        
 		        $debugstr .= "<div>{$post_type} | {$category} | {$title} | {$p_id} | {$terms} | {}</div>";
 
