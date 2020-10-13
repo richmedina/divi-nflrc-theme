@@ -44,7 +44,7 @@ function dpdfg_after_read_more($content, $props) {
         // $resource_type_blk = display_as_resource_block($d['resource_type'], $d['access_link']);
         $description = wp_trim_words($content, 15, ' ...');
 
-        $html = $description;     
+        $html = $content;     
         // $html = "<div class='card-wrap-row{$single}'>";
         // $html .=    "<div>{$d['thumb']}</div>";  //Thumbnail column
         // $html .=    "<div class='card'>";
