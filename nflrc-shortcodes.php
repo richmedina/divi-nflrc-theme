@@ -269,7 +269,7 @@ function nflrc_debug_func() {
 		    	array(
 		    		'taxonomy' => 'resource_type',
             		'field'    => 'term_id',
-		    		'terms'    => array(136,137,142,139,140,144,39,141,143,138,135
+		    		'terms'    => array(136,137,140,144,39,135)
 ),
 		    	),
 		    ),
@@ -334,8 +334,8 @@ Professional Learning
 129,131,133,32,33,130,132
 publications
 used publication table
-resource_types
-136,137,142,139,140,144,39,141,143,138,135
+resource_types for language teaching materials
+136,137,140,144,39,135
 
 .dp-dfg-dropdown-tag
 background-color: #3f5ca9;
