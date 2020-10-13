@@ -63,7 +63,7 @@ function dpdfg_after_read_more($content, $props) {
         // $html .=        "</div>"; //END footer
         // $html .=    "</div>"; //END card    
         // $html .= "</div>"; //END grid row
-        $html .= get_the_term_list( $p->ID, '', ' ', ' ');
+        $html .= get_the_term_list( $p->ID, 'category', ' ', ' ');
         return $html;
     } 
 }
