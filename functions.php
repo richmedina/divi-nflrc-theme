@@ -65,7 +65,7 @@ function dpdfg_after_read_more($content, $props) {
         // $html .= "</div>"; //END grid row
         $html .= "<div class='tags'>";
         // $html .= get_the_term_list( $p->ID, 'category', ' ', ' ');
-        $html .= get_the_term_list( $p->ID, 'focus_area', ' ', ' ');
+        $html .= get_the_term_list( $p->ID, 'category', ' ', ' ');
         $html .= "</div>";
 
         return $html;
