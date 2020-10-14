@@ -44,28 +44,9 @@ function dpdfg_after_read_more($content, $props) {
         // $resource_type_blk = display_as_resource_block($d['resource_type'], $d['access_link']);
         // $description = wp_trim_words($content, 15, ' ...');
 
-        $html = $props;     
-        // $html = "<div class='card-wrap-row{$single}'>";
-        // $html .=    "<div>{$d['thumb']}</div>";  //Thumbnail column
-        // $html .=    "<div class='card'>";
-        // $html .=        "<header class='card-header'>";
-        // $html .=            "<h4 class='card-title'><a href='{$d['link']}'>{$d['title']}</a></h4>";
-        // $html .=            $resource_type_blk;
-        // $html .=            $d['people'];
-        // $html .=        "</header>";
-        
-        // $html .=        "<div class='card-body'><div class='date_str'>{$d['start_date']}</div>{$description}</div>";
-        
-        // $html .=        "<div class='card-footer'>";
-        // $html .=            "<div class='tag-series'>{$d['series']}</div>";
-        // $html .=            "<div class='tags'>{$d['tags']}</div>";
-        // $html .=            "<div class='mod-date'><time>Updated {$d['mod_date']}</time></div>";
-        // $html .=        "</div>"; //END footer
-        // $html .=    "</div>"; //END card    
-        // $html .= "</div>"; //END grid row
+        $html = ""; 
         $html .= "<div class='tags'>";
-        // $html .= get_the_term_list( $p->ID, 'category', ' ', ' ');
-        $html .= get_the_term_list( $p->ID, 'category', ' ', ' ');
+        $html .= get_the_term_list( $p->ID, 'focus_area', ' ', ' ');
         $html .= "</div>";
 
         return $html;
