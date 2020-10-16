@@ -322,7 +322,13 @@ function nflrc_debug_func() {
 add_shortcode('nflrc_mod_all_post_dates', 'nflrc_mod_post_dates_func');
 function nflrc_mod_post_dates_func() {
 		// global $wpdb;
-		$args = array('post_type' => array('project', 'prodev', 'publication', 'contact', 'story'),'posts_per_page' 	=> -1,);
+		$args = array(
+			'post_type' => array('project', 'prodev', 'publication', 'contact', 'story'),
+			'meta_key'       	=> 'grant_cycle',
+	    	// 'orderby'			=> 'meta_value_num',
+	    	'order'   			=> 'DESC',
+			'posts_per_page' 	=> -1,
+		);
 		$the_query = new WP_Query( $args );
 		$debugstr = "";
 		$debugstr .= "<h2>" . $the_query->post_count . " posts</h2>";
