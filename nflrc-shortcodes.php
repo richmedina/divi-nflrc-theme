@@ -330,14 +330,15 @@ function nflrc_mod_post_dates_func() {
 			global $post;
 		    while ( $the_query->have_posts() ) {
 		        $the_query->the_post();
-		        $title = $post->post_title;
-		        $p_id = $post->ID;
-		        $grant = $post->grant_cycle;
+		        $d = read_nflrc_fields($post);
+		        // $title = $post->post_title;
+		        // $p_id = $post->ID;
+		        // $grant = $post->grant_cycle;
 
 		        // $wpdb->query("UPDATE $wpdb->posts SET post_date = '{$d}', post_date_gmt = '{$d}'  WHERE ID = 1500");
 		        
 		        	        
-		        $debugstr .= "<div>{$grant} | {$p_id} | {$title} | </div>";
+		        $debugstr .= "<div>{$d['cycle']} | {$d['title']} | </div>";
 		    }
 		    wp_reset_postdata();    
 		} 
