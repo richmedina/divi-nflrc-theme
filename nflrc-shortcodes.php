@@ -352,6 +352,46 @@ function nflrc_mod_post_dates_func() {
 		return $debugstr;
 }
 
+add_shortcode('import_csv_post_dates', 'import_csv_post_dates_func');
+function import_csv_post_dates_func($atts, $content = null) {
+  global $wpdb;
+  if (isset($_POST['submit'])) {
+    $csv_file = $_FILES['csv_file'];
+    $csv_to_array = array_map('str_getcsv', file($csv_file['tmp_name']));
+	$output = "";
+	$count = 0;
+    foreach ($csv_to_array as $key => $value) {
+    	// var_dump($value);
+    	// [0]6, [1]"project", [2]"1996-08-01 00:00:00.000000"
+		$args = array(
+			'post_type'      	=> $value[1],
+			'meta_key'       	=> 'postgres_pk',
+			'meta_value'		=> $value[0],
+		    'numberposts' 		=> 1,
+		);
+		$posts = new WP_Query($args);
+
+		if ( $posts->have_posts() ) {
+			$count += 1;
+			global $post;
+		    $posts->the_post();
+		    // $wpdb->query("UPDATE $wpdb->posts SET post_date = '{$value[2]}', post_date_gmt = '{$value[2]}'  WHERE ID = 1500");
+		    $output .= "<div>{$post->ID} {$value[0]} {$value[1]} {$value[2]} </div>";
+		}
+		wp_reset_postdata();
+	}
+	$output .= $count;
+	return $output;
+  } else {
+  	echo '<h2>Import object/term relations from django site:</h2>';
+    echo '<form action="" method="post" enctype="multipart/form-data">';
+    echo '<input type="file" name="csv_file">';
+    echo '<input type="submit" name="submit" value="submit">';
+    echo '</form>';
+  }
+}
+
+
 /*Set taxonomy term for a post
 wp_set_post_terms
 
