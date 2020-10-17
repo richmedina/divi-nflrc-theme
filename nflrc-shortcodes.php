@@ -375,7 +375,7 @@ function import_csv_post_dates_func($atts, $content = null) {
 			$count += 1;
 			global $post;
 		    $posts->the_post();
-		    $wpdb->query("UPDATE $wpdb->posts SET post_date = '{$value[2]}', post_date_gmt = '{$value[2]}'  WHERE ID = {$post->ID}");
+		    // $wpdb->query("UPDATE $wpdb->posts SET post_date = '{$value[2]}', post_date_gmt = '{$value[2]}'  WHERE ID = {$post->ID}");
 		    $output .= "<div>{$post->ID} {$value[0]} {$value[1]} {$value[2]} </div>";
 		}
 		wp_reset_postdata();
@@ -383,7 +383,7 @@ function import_csv_post_dates_func($atts, $content = null) {
 	$output .= $count;
 	return $output;
   } else {
-  	echo '<h2>Import object/term relations from django site:</h2>';
+  	echo '<h2>Import timestamp info from legacy site</h2>';
     echo '<form action="" method="post" enctype="multipart/form-data">';
     echo '<input type="file" name="csv_file">';
     echo '<input type="submit" name="submit" value="submit">';
