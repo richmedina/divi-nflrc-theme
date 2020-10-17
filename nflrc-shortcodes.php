@@ -375,7 +375,7 @@ function import_csv_post_dates_func($atts, $content = null) {
 			$count += 1;
 			global $post;
 		    $posts->the_post();
-		    // $wpdb->query("UPDATE $wpdb->posts SET post_date = '{$value[2]}', post_date_gmt = '{$value[2]}'  WHERE ID = 1500");
+		    $wpdb->query("UPDATE $wpdb->posts SET post_date = '{$value[2]}', post_date_gmt = '{$value[2]}'  WHERE ID = {$post->ID}");
 		    $output .= "<div>{$post->ID} {$value[0]} {$value[1]} {$value[2]} </div>";
 		}
 		wp_reset_postdata();
