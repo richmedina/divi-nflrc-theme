@@ -324,10 +324,10 @@ function nflrc_mod_post_dates_func() {
 		// global $wpdb;
 		$args = array(
 			'post_type' => array('project', 'prodev', 'publication', 'contact', 'story'),
-			'meta-key' => 'grant_cycle',
-			'orderby'			=> 'grant_cycle',
-	    	'order'   			=> 'DESC',
-			'posts_per_page' 	=> -1,
+			'meta_key' 	=> 'grant_cycle',
+			'orderby'	=> 'grant_cycle',
+	    	'order'   	=> 'DESC',
+			'posts_per_page' => -1,
 		);
 		$the_query = new WP_Query( $args );
 		$debugstr = "";
