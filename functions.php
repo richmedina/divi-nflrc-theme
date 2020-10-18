@@ -55,10 +55,10 @@ function dpdfg_after_read_more($content, $props) {
         $html .=    "<div style='grid-area: a'>";
         $html .=    "content";
         $html .=    "</div>"; 
-        $html .=    "<div class='tags' style='grid-area: b'>";
-        $html .=    get_the_term_list($p->ID, 'focus_area', ' ', ' ');
-        $html .=    "</div>";
         $html .= "</div>"; 
+        $html .= "<div class='tags' style='grid-area: b'>";
+        $html .=    get_the_term_list($p->ID, 'focus_area', ' ', ' ');
+        $html .= "</div>";
 
         return $html;
     } 
