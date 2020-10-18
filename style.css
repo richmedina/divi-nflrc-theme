@@ -123,13 +123,13 @@ p a:active, .block_card a:active {text-decoration: none;}*/
 }
 .item-content {
     display: grid;
-    grid-template-columns: 100%; 
     grid-template-rows: 1fr auto;
-    grid-template-areas: 
-    "a"
-    "a"
-    "a"
-    "b";
+}
+
+.dpdfg_filtergrid_0 .dp-dfg-image img {
+    max-height: 128px;
+    width: 100%;
+    object-fit: cover;
 }
 
 @media (min-width: 1024px) {
