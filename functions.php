@@ -57,6 +57,7 @@ function dpdfg_after_read_more($content, $props) {
         $html .=    "</div>"; 
         $html .=    "<div class='tags'>";
         $html .=        get_the_term_list($p->ID, 'focus_area', ' ', ' ');
+        $html .=        "<p><i class='fas fa-book-open 1x'></i>";
         $html .=    "</div>";
         $html .= "</div>"; 
 
