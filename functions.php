@@ -50,6 +50,7 @@ add_filter('dpdfg_custom_query_args', 'dp_dfg_custom_query_function', 10, 2);
 function dpdfg_after_read_more($content, $props) {
     if (isset($props['admin_label']) && $props['admin_label'] === 'NFLRC Items') {
         $p = get_post();
+        $p_type = $p->post_type;
 
         $html = "<div class='item-content'>";
         $html .=    "<div>";
@@ -57,7 +58,7 @@ function dpdfg_after_read_more($content, $props) {
         $html .=    "</div>"; 
         $html .=    "<div class='tags'>";
         $html .=        get_the_term_list($p->ID, 'focus_area', ' ', ' ');
-        $html .=        "<p><i class='fas fa-book-open 1x'></i>";
+        $html .=        "<p>{$p_type}</p>";//"<p><i class='fas fa-book-open 1x'></i>";
         $html .=    "</div>";
         $html .= "</div>"; 
 
