@@ -10,7 +10,7 @@ add_action( 'wp_enqueue_scripts', 'divi__child_theme_enqueue_styles' );
 /* Custom shortcodes */
 include('nflrc-shortcodes.php');
 
-
+/** DIVI Custom Queries for use in modules that support it. **/
 function dp_dfg_custom_query_function($query, $props) {
 
     if (isset($props['admin_label']) && $props['admin_label'] === 'Collaborator Grid') {
@@ -36,6 +36,17 @@ function dp_dfg_custom_query_function($query, $props) {
 add_filter('dpdfg_custom_query_args', 'dp_dfg_custom_query_function', 10, 2);
 
 
+/** DIVI Custom Displays for Advanced Filter Grid or other modules that support it.**/
+
+/**
+    Documentation: https://diviplugins.com/documentation/divi-filtergrid/custom-content/
+    Other properties to distinguish one module instance from another:
+        $props['module_id'] ==> CSS ID
+        $props['admin_label'] ==> ADMIN Label
+        $props['module_class'] ==> CSS Class
+        module_id is what can be set for the CSS ID in the module instance settings.
+*/
+
 function dpdfg_after_read_more($content, $props) {
     if (isset($props['admin_label']) && $props['admin_label'] === 'NFLRC Items') {
         $p = get_post();
@@ -44,10 +55,14 @@ function dpdfg_after_read_more($content, $props) {
         // $resource_type_blk = display_as_resource_block($d['resource_type'], $d['access_link']);
         // $description = wp_trim_words($content, 15, ' ...');
 
-        $html = ""; 
-        $html .= "<div class='tags'>";
-        $html .= get_the_term_list( $p->ID, 'focus_area', ' ', ' ');
-        $html .= "</div>";
+        $html = "<div style='display: grid; grid-template-rows: 1fr auto'>";
+        $html .=    "<div>";
+        $html .=    "content";
+        $html .=    "</div>"; 
+        $html .=    "<div class='tags'>";
+        $html .=    get_the_term_list($p->ID, 'focus_area', ' ', ' ');
+        $html .=    "</div>";
+        $html = "</div>"; 
 
         return $html;
     } 
