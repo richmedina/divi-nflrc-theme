@@ -121,11 +121,11 @@ p a:active, .block_card a:active {text-decoration: none;}*/
     padding: 2px 5px 2px 5px;
 /*  font-weight: bold; */
 }
-.item-content {
+/*.item-content {
     min-height: 100vh;
     display: grid;
     grid-template-rows: 1fr auto;
-}
+}*/
 
 .dpdfg_filtergrid_0 .dp-dfg-image img {
     max-height: 128px;
