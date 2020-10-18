@@ -122,7 +122,8 @@ p a:active, .block_card a:active {text-decoration: none;}*/
 /*  font-weight: bold; */
 }
 .item-content {
-    display: grid; 
+    display: grid;
+    grid-template-columns: 100%; 
     grid-template-rows: 1fr auto;
     grid-template-areas: 
     "a"
