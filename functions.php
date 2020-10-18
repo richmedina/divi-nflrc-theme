@@ -51,11 +51,11 @@ function dpdfg_after_read_more($content, $props) {
     if (isset($props['admin_label']) && $props['admin_label'] === 'NFLRC Items') {
         $p = get_post();
 
-        $html = "<div style='display: grid; grid-template-rows: 1fr auto'>";
-        $html .=    "<div>";
+        $html = "<div class='item-content'>";
+        $html .=    "<div class='a'>";
         $html .=    "content";
         $html .=    "</div>"; 
-        $html .=    "<div class='tags'>";
+        $html .=    "<div class='tags b'>";
         $html .=    get_the_term_list($p->ID, 'focus_area', ' ', ' ');
         $html .=    "</div>";
         $html .= "</div>"; 
