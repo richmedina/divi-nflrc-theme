@@ -121,6 +121,15 @@ p a:active, .block_card a:active {text-decoration: none;}*/
     padding: 2px 5px 2px 5px;
 /*  font-weight: bold; */
 }
+.item-content {
+    display: grid; 
+    grid-template-rows: 1fr auto;
+    grid-template-areas: 
+    "a"
+    "a"
+    "a"
+    "b";
+}
 
 @media (min-width: 1024px) {
     .grid_wrap {
