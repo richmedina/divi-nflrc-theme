@@ -51,10 +51,6 @@ function dpdfg_after_read_more($content, $props) {
     if (isset($props['admin_label']) && $props['admin_label'] === 'NFLRC Items') {
         $p = get_post();
 
-        // $single = has_post_thumbnail() ? "" : ".single";
-        // $resource_type_blk = display_as_resource_block($d['resource_type'], $d['access_link']);
-        // $description = wp_trim_words($content, 15, ' ...');
-
         $html = "<div style='display: grid; grid-template-rows: 1fr auto'>";
         $html .=    "<div>";
         $html .=    "content";
@@ -62,7 +58,7 @@ function dpdfg_after_read_more($content, $props) {
         $html .=    "<div class='tags'>";
         $html .=    get_the_term_list($p->ID, 'focus_area', ' ', ' ');
         $html .=    "</div>";
-        $html = "</div>"; 
+        $html .= "</div>"; 
 
         return $html;
     } 
