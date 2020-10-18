@@ -103,7 +103,8 @@ p a:active, .block_card a:active {text-decoration: none;}*/
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.dp-dfg-skin-default .dp-dfg-filters-dropdown-layout .dp-dfg-dropdown-label {
+.dp-dfg-skin-default .dp-dfg-filters-dropdown-layout .dp-dfg-dropdown-label::before {
+    content:"";
     background-color: #3f5ca9;
     color: white;
 }
