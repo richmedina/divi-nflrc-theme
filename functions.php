@@ -53,12 +53,13 @@ function dpdfg_after_read_more($content, $props) {
 
         $html = "<div class='item-content'>";
         $html .=    "<div style=''>";
-        $html .=    "content";
+        $html .=        "content";
         $html .=    "</div>"; 
+        $html .=    "<div class='tags' style=''>";
+        $html .=        get_the_term_list($p->ID, 'focus_area', ' ', ' ');
+        $html .=    "</div>";
         $html .= "</div>"; 
-        $html .= "<div class='tags' style=''>";
-        $html .=    get_the_term_list($p->ID, 'focus_area', ' ', ' ');
-        $html .= "</div>";
+
 
         return $html;
     } 
