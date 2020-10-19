@@ -54,10 +54,10 @@ function dpdfg_after_read_more($content, $props) {
 
         $html = "<div class='item-content-wrapper'><div class='item-content'>";
         $html .=    "<div>";
-        $html .=        "<h2> Title goes here </h2>";  
+        $html .=        "<h2> {$p->post_title} </h2>";  
         $html .=    "</div>"; 
         $html .=    "<div>";
-        $html .=        "body content here";  
+        $html .=        get_the_excerpt($p->ID);  
         $html .=    "</div>"; 
         $html .=    "<div class='tags'>";
         $html .=        "<p>" . get_the_term_list($p->ID, 'focus_area', ' ', ' ') . "</p>";
