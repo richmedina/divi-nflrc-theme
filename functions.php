@@ -54,7 +54,7 @@ function dpdfg_after_read_more($content, $props) {
 
         $html = "<div class='item-content-wrapper'><div class='item-content'>";
         $html .=    "<div>";
-        $html .=        "<h2> Title goes here </h2";  
+        $html .=        "<h2> Title goes here </h2>";  
         $html .=    "</div>"; 
         $html .=    "<div>";
         $html .=        "body content here";  
