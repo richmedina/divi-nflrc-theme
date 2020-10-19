@@ -51,10 +51,11 @@ function dpdfg_after_read_more($content, $props) {
     if (isset($props['admin_label']) && $props['admin_label'] === 'NFLRC Items') {
         $p = get_post();
         $p_type = $p->post_type;
+        $p_title = wp_trim_words($p->post_title, 8, ' ...');
 
         $html = "<div class='item-content-wrapper'><div class='item-content'>";
         $html .=    "<div>";
-        $html .=        "<h2> {$p->post_title} </h2>";  
+        $html .=        "<h3> {$p_title} </h3>";  
         $html .=    "</div>"; 
         $html .=    "<div>";
         $html .=        get_the_excerpt($p->ID);  
