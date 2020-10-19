@@ -58,7 +58,7 @@ function dpdfg_after_read_more($content, $props) {
         $html .=        "<h4> {$p_title} </h4>";  
         $html .=    "</div>"; 
         $html .=    "<div>";
-        $html .=        get_the_excerpt($p->ID);  
+        $html .=        wp_trim_words(get_the_excerpt($p->ID), 10, ' ...');  
         $html .=    "</div>"; 
         $html .=    "<div class='tags'>";
         $html .=        "<p>" . get_the_term_list($p->ID, 'focus_area', ' ', ' ') . "</p>";
