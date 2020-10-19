@@ -55,7 +55,7 @@ function dpdfg_after_read_more($content, $props) {
 
         $html = "<div class='item-content-wrapper'><div class='item-content'>";
         $html .=    "<div>";
-        $html .=        "<h3> {$p_title} </h3>";  
+        $html .=        "<h4> {$p_title} </h4>";  
         $html .=    "</div>"; 
         $html .=    "<div>";
         $html .=        get_the_excerpt($p->ID);  
