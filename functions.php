@@ -52,7 +52,7 @@ function dpdfg_after_read_more($content, $props) {
         $p = get_post();
         $p_type = $p->post_type;
 
-        $html = "<div class='item-content'>";
+        $html = "<div class='item-content-wrapper'><div class='item-content'>";
         $html .=    "<div>";
         $html .=        "body content here";  
         $html .=    "</div>"; 
@@ -60,7 +60,7 @@ function dpdfg_after_read_more($content, $props) {
         $html .=        "<p>" . get_the_term_list($p->ID, 'focus_area', ' ', ' ') . "</p>";
         $html .=        "<p>{$p_type}</p>";//"<p><i class='fas fa-book-open 1x'></i>";
         $html .=    "</div>";
-        $html .= "</div>"; 
+        $html .= "</div></div>"; 
 
 
         return $html;
