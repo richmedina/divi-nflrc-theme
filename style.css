@@ -115,9 +115,10 @@ p a:active, .block_card a:active {text-decoration: none;}*/
     padding:5px;
     text-align: center;
 }
-.tags > a { 
+.tags  a { 
     background-color: #D7DBDD;
     color: black;
+    margin: 2px 5px 2px 5px;
     padding: 2px 5px 2px 5px;
 /*  font-weight: bold; */
 }
