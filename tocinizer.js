@@ -9,7 +9,8 @@ window.onload = function() {
         anchor = document.createElement('a');
         s.id = 'section' + i;
         anchor.href = '#';
-        anchor.setAttribute('data-starget', '#'+s.id);
+        // anchor.setAttribute('data-starget', '#'+s.id);
+        anchor.setAttribute('href', '#'+s.id);
         anchor.textContent = s.textContent;
         anchor.classList.add('tocbtn');
         menuitem.append(anchor);
@@ -30,11 +31,11 @@ window.onload = function() {
 
         // });        
     }
-    document.querySelector('#menutop').addEventListener('click', function(e) {
-        document.querySelectorAll('.active').forEach(function(element) {
-            element.classList.remove('active');
-        });  
-    });
+    // document.querySelector('#menutop').addEventListener('click', function(e) {
+    //     document.querySelectorAll('.active').forEach(function(element) {
+    //         element.classList.remove('active');
+    //     });  
+    // });
 
 };
 
