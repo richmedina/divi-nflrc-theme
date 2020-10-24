@@ -43,7 +43,7 @@ p a:active, .block_card a:active {text-decoration: none;}*/
     background: rgb(214,185,235);
 }
 
-.toclist {
+ul.toclist {
     list-style-type: none;
     font-size: .8em
 }
