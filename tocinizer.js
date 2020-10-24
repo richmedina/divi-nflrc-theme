@@ -15,20 +15,20 @@ window.onload = function() {
         menuitem.append(anchor);
         toc.append(menuitem);
 
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            section = document.querySelector(e.target.getAttribute('data-starget'));
-            document.querySelectorAll('.active').forEach(function(element) {
-                element.classList.remove('active');
-            });
+        // anchor.addEventListener('click', function(e) {
+        //     e.preventDefault();
+        //     section = document.querySelector(e.target.getAttribute('data-starget'));
+        //     document.querySelectorAll('.active').forEach(function(element) {
+        //         element.classList.remove('active');
+        //     });
             
-            // section.parentElement.style.height = '200%';
-            section.scrollIntoView(); 
-            section.classList.add('active');
-            e.target.classList.add('active');
-            // e.target.scrollIntoView();
+            
+        //     // section.scrollIntoView(); 
+        //     section.classList.add('active');
+        //     e.target.classList.add('active');
+            
 
-        });        
+        // });        
     }
     document.querySelector('#menutop').addEventListener('click', function(e) {
         document.querySelectorAll('.active').forEach(function(element) {
