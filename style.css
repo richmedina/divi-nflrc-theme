@@ -42,6 +42,7 @@ p a:active, .block_card a:active {text-decoration: none;}*/
 .active {
     background: rgb(214,185,235);
 }
+.toclist a:hover {text-decoration: none; background-color: #b4e7f8}
 
 /*Custom Grid Styles*/
 .grid_wrap {

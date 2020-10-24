@@ -8,7 +8,7 @@ window.onload = function() {
         menuitem = document.createElement('li');
         anchor = document.createElement('a');
         s.id = 'section' + i;
-        anchor.href = '#';
+        // anchor.href = '#';
         // anchor.setAttribute('data-starget', '#'+s.id);
         anchor.setAttribute('href', '#'+s.id);
         anchor.textContent = s.textContent;
