@@ -271,21 +271,21 @@ function nflrc_meta_display_func() {
 	$d = read_nflrc_fields($post);
 	$html = "<div>";	
 
-	// if($d['post_type'] === 'project') {
-	// 	html .= "<h4>{$d['post_type']}</h4>";
+	if($d['post_type'] === 'project') {
+		html .= "<h4>{$d['post_type']}</h4>";
 
-	// } else if($d['post_type'] === 'publication') {
-	// 	html .= "<h4>{$d['post_type']}</h4>";
+	} else if($d['post_type'] === 'publication') {
+		html .= "<h4> {$d['post_type']} </h4>";
 
-	// } else if($d['post_type'] === 'prodev') {
-	// 	html .= "<h4>{$d['post_type']}</h4>";
-	// } else if($d['post_type'] === 'contact') {
-	// 	html .= "<h4>{$d['post_type']}</h4>";
+	} else if($d['post_type'] === 'prodev') {
+		// html .= "<h4>{$d['post_type']}</h4>";
+	} else if($d['post_type'] === 'contact') {
+		// html .= "<h4>{$d['post_type']}</h4>";
 
-	// } else if($d['post_type'] === 'story') {
-	// 	html .= "<h4>{$d['post_type']}</h4>";
-	// }
-	$html .= "{$d['post_type']}</div>";
+	} else if($d['post_type'] === 'story') {
+		// html .= "<h4>{$d['post_type']}</h4>";
+	}
+	$html .= "</div>";
 	return $html;
 }
 
