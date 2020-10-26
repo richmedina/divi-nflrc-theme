@@ -299,7 +299,7 @@ add_shortcode('nflrc_item_tags', 'nflrc_item_tags_func');
 function nflrc_item_tags_func() {
 	global $post;
 	
-    $html .=    "<div class='tags'>";
+    $html .=    "<div class='tags' style='text-align: left;'>";
     $html .=        " " . get_the_term_list($post->ID, ['focus_area', 'language'], ' ', ' ') . " ";
     $html .=    "</div>";
 	return $html;
