@@ -272,19 +272,21 @@ function nflrc_meta_display_func() {
 	$html = "<div>";	
 
 	if($d['post_type'] === 'project') {
-		html .= "<h4>{$d['post_type']}</h4>";
+		$html .= "<h4>{$d['post_type']}</h4>";
 
 	} else if($d['post_type'] === 'publication') {
-		html .= "<h4> {$d['post_type']} </h4>";
+		$html .= "<h4>{$d['post_type']}</h4>";
 
 	} else if($d['post_type'] === 'prodev') {
-		// html .= "<h4>{$d['post_type']}</h4>";
+		$html .= "<h4>{$d['post_type']}</h4>";
+
 	} else if($d['post_type'] === 'contact') {
-		// html .= "<h4>{$d['post_type']}</h4>";
+		$html .= "<h4>{$d['post_type']}</h4>";
 
 	} else if($d['post_type'] === 'story') {
-		// html .= "<h4>{$d['post_type']}</h4>";
+		$html .= "<h4>{$d['post_type']}</h4>";
 	}
+
 	$html .= "</div>";
 	return $html;
 }
