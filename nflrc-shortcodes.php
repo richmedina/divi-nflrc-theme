@@ -285,7 +285,7 @@ function nflrc_meta_display_func() {
 	// } else if($d['post_type'] === 'story') {
 	// 	html .= "<h4>{$d['post_type']}</h4>";
 	// }
-	$html .= "</div>";
+	$html .= "{$d['post_type']}</div>";
 	return $html;
 }
 
