@@ -269,7 +269,7 @@ add_shortcode('nflrc_meta_display', 'nflrc_meta_display_func');
 function nflrc_meta_display_func() {
 	global $post;
 	$output = $post->ID;
-	return 'here';
+	return $output;
 }
 
 
