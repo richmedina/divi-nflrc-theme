@@ -265,6 +265,14 @@ function nflrc_contact_grid_func($atts, $content = null) {
 	return $output;	
 }
 
+add_shortcode('nflrc_meta_display', 'nflrc_meta_display_func');
+function nflrc_meta_display_func() {
+	global $post;
+	$output = $post->ID;
+	return 'here';
+}
+
+
 add_shortcode('nflrc_debug', 'nflrc_debug_func');
 function nflrc_debug_func() {
 		// $t = '2018-2022';
