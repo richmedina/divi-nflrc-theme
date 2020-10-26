@@ -270,6 +270,7 @@ function nflrc_meta_display_func() {
 	global $post;
 	$d = read_nflrc_fields($post);
 	$html = "<div>";
+	return $d;
 
 	if($d['post_type'] === 'project') {
 		html .= $d['post_type'];
