@@ -269,7 +269,7 @@ add_shortcode('nflrc_meta_display', 'nflrc_meta_display_func');
 function nflrc_meta_display_func() {
 	global $post;
 	$d = read_nflrc_fields($post);
-	$html = "<div>";	
+	$html = "<div><ul class='nflrc-item-meta-list'>";	
 
 	if($d['post_type'] === 'project') {
 		$html .= "";
@@ -290,7 +290,7 @@ function nflrc_meta_display_func() {
 		$html .= "";
 	}
 
-	$html .= "</div>";
+	$html .= "</ul></div>";
 	return $html;
 }
 
