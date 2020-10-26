@@ -269,8 +269,9 @@ add_shortcode('nflrc_meta_display', 'nflrc_meta_display_func');
 function nflrc_meta_display_func() {
 	global $post;
 	$d = read_nflrc_fields($post);
+	var_dump($d);
 	$html = "<div>";
-	return $d;
+	return "here";
 
 	if($d['post_type'] === 'project') {
 		html .= $d['post_type'];
