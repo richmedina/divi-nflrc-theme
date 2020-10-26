@@ -269,16 +269,16 @@ add_shortcode('nflrc_meta_display', 'nflrc_meta_display_func');
 function nflrc_meta_display_func() {
 	global $post;
 	$d = read_nflrc_fields($post);
-	$html = "<div><ul class='nflrc-item-meta-list'>";	
+	$html = "<div class='item-meta-list'>";	
 
 	if($d['post_type'] === 'project') {
 		$html .= "";
 
 	} else if ($d['post_type'] === 'publication') {
-		if ($d['oer']) $html .= "<li>OER</li>";
-		if ($d['oclc_url']) $html .= " <li><a href='{$d['oclc_url']}'>oclc</a></li> ";
-		if ($d['order_url']) $html .= " <li><a href='{$d['order_url']}'>order</a></li> ";
-		if ($d['ext_url']) $html .= " <li><a href='{$d['ext_url']}' target='_blank'>view</a></li> ";
+		if ($d['oer']) $html .= "<span>OER</span>";
+		if ($d['oclc_url']) $html .= " <span><a href='{$d['oclc_url']}' target='_blank'>oclc</a></span> ";
+		if ($d['order_url']) $html .= " <span><a href='{$d['order_url']}' target='_blank'>order</a></span> ";
+		if ($d['ext_url']) $html .= " <span><a href='{$d['ext_url']}' target='_blank'>view</a></span> ";
 
 	} else if ($d['post_type'] === 'prodev') {
 		$html .= "";
@@ -290,7 +290,7 @@ function nflrc_meta_display_func() {
 		$html .= "";
 	}
 
-	$html .= "</ul></div>";
+	$html .= "</div>";
 	return $html;
 }
 
