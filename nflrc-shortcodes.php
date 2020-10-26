@@ -309,7 +309,7 @@ function nflrc_item_categories_func() {
 	global $post;
 	
     $html .=    "<div class='tags' style='text-align: left;'>";
-    $html .=    	get_the_category();
+    $html .=    	get_the_term_list($post->ID, 'category', ' ', ' ');
     $html .=    "</div>";
 	return $html;
 }
