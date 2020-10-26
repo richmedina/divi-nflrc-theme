@@ -48,10 +48,10 @@ ul.toclist {
     font-size: .8em
 }
 
-ul.toclist > li {
-    border-radius: 0 0 2px 2px;
-}
-ul.toclist > li:hover {text-decoration: none; background-color: #EAECEE; padding: 2px;}
+/*ul.toclist > li {
+    border-radius: 5px 5px 5px 5px;
+}*/
+ul.toclist > li:hover {text-decoration: none; background-color: #EAECEE; padding: 5px;}
 
 /*Custom Grid Styles*/
 .grid_wrap {

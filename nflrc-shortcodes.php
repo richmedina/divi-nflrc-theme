@@ -22,6 +22,11 @@ function read_nflrc_fields($post) {
 	} else if($post_type === 'publication') {
 		$fields['language'] = $post->language;
 		$fields['author'] = $post->author;
+		$fields['oer'] = $post->is_oer;
+		$fields['ext_url'] = $post->external_url;
+		$fields['url'] = $post->url;
+		$fields['oclc_url'] = $post->oclc_url;
+		$fields['order_url'] = $post->order_from;
 
 	} else if($post_type === 'prodev') {
 		$fields['language'] = $post->language;
