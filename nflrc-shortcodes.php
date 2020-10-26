@@ -275,13 +275,10 @@ function nflrc_meta_display_func() {
 		$html .= "";
 
 	} else if ($d['post_type'] === 'publication') {
-		if ($d['oer']) {
-			$html .= "OER";
-		}
-		$html .= "<a href='{$d['ext_url']}'>view</a>";
-		$html .= "<a href='{$d['oclc_url']}'>oclc</a>";
-		$html .= "<a href='{$d['order_url']}'>order</a>";
-		$html .= "";
+		if ($d['oer']) $html .= "OER";
+		if ($d['ext_url']) $html .= " <a href='{$d['ext_url']}' target='_blank'>view</a> ";
+		if ($d['oclc_url']) $html .= " <a href='{$d['oclc_url']}'>oclc</a> ";
+		if ($d['order_url']) $html .= " <a href='{$d['order_url']}'>order</a> ";
 
 	} else if ($d['post_type'] === 'prodev') {
 		$html .= "";
