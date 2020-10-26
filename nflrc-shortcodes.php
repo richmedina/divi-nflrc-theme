@@ -294,13 +294,12 @@ function nflrc_meta_display_func() {
 	return $html;
 }
 
-
 add_shortcode('nflrc_item_tags', 'nflrc_item_tags_func');
 function nflrc_item_tags_func() {
 	global $post;
 	
     $html .=    "<div class='tags' style='text-align: left;'>";
-    $html .=        " " . get_the_term_list($post->ID, ['focus_area', 'language'], ' ', ' ') . " ";
+    $html .=    	get_the_term_list($post->ID, ['focus_area', 'language', 'professional_learning', 'resource_type', 'grant_period'], ' ', ' ');
     $html .=    "</div>";
 	return $html;
 }
