@@ -269,26 +269,23 @@ add_shortcode('nflrc_meta_display', 'nflrc_meta_display_func');
 function nflrc_meta_display_func() {
 	global $post;
 	$d = read_nflrc_fields($post);
-	var_dump($d);
-	
-	// $html = "<div>";
-	// return "here";
+	$html = "<div>";	
 
-	// if($d['post_type'] === 'project') {
-	// 	html .= $d['post_type'];
+	if($d['post_type'] === 'project') {
+		html .= "<h4>{$d['post_type']}</h4>";
 
-	// } else if($d['post_type'] === 'publication') {
-	// 	html .= $d['post_type'];
+	} else if($d['post_type'] === 'publication') {
+		html .= "<h4>{$d['post_type']}</h4>";
 
-	// } else if($d['post_type'] === 'prodev') {
-	// 	html .= $d['post_type'];
-	// } else if($d['post_type'] === 'contact') {
-	// 	html .= $d['post_type'];
+	} else if($d['post_type'] === 'prodev') {
+		html .= "<h4>{$d['post_type']}</h4>";
+	} else if($d['post_type'] === 'contact') {
+		html .= "<h4>{$d['post_type']}</h4>";
 
-	// } else if($d['post_type'] === 'story') {
-	// 	html .= $d['post_type'];
-	// }
-	// $html .= "</div>";
+	} else if($d['post_type'] === 'story') {
+		html .= "<h4>{$d['post_type']}</h4>";
+	}
+	$html .= "</div>";
 	return "here";
 }
 
