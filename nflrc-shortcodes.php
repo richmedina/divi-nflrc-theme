@@ -268,7 +268,7 @@ function nflrc_contact_grid_func($atts, $content = null) {
 add_shortcode('nflrc_meta_display', 'nflrc_meta_display_func');
 function nflrc_meta_display_func() {
 	global $post;
-	var_dump($d);
+	// var_dump($d);
 	// $d = read_nflrc_fields($post);
 	
 	$html = "<div>";
