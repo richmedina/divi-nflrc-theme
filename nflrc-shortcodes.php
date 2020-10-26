@@ -300,7 +300,7 @@ function nflrc_item_tags_func() {
 	global $post;
 	
     $html .=    "<div class='tags'>";
-    $html .=        "<p>" . get_the_term_list($post->ID, ['focus_area', 'language'], ' ', ' ') . "</p>";
+    $html .=        " " . get_the_term_list($post->ID, ['focus_area', 'language'], ' ', ' ') . " ";
     $html .=    "</div>";
 	return $html;
 }
