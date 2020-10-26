@@ -122,13 +122,13 @@ ul.toclist > li:hover {text-decoration: none; background-color: #EAECEE; padding
 }
 
 .tags {
-    padding:5px;
+    padding:3px;
     text-align: center;
 }
 .tags  a { 
     background-color: #D7DBDD;
     color: black;
-    margin: 2px 5px 2px 5px;
+    margin: 1px 5px 1px 5px;
     padding: 2px 5px 2px 5px;
 /*  font-weight: bold; */
 }
