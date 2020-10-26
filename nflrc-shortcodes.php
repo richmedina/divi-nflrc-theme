@@ -304,6 +304,16 @@ function nflrc_item_tags_func() {
 	return $html;
 }
 
+add_shortcode('nflrc_item_categories', 'nflrc_item_categories_func');
+function nflrc_item_categories_func() {
+	global $post;
+	
+    $html .=    "<div class='tags' style='text-align: left;'>";
+    $html .=    	get_the_term_list($post->ID, ['categories'], ' ', ' ');
+    $html .=    "</div>";
+	return $html;
+}
+
 add_shortcode('nflrc_debug', 'nflrc_debug_func');
 function nflrc_debug_func() {
 		// $t = '2018-2022';
