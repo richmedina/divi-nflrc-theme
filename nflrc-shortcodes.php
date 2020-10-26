@@ -271,19 +271,19 @@ function nflrc_meta_display_func() {
 	$d = read_nflrc_fields($post);
 	$html = "<div>";
 
-	if($post_type === 'project') {
-		html .= $post_type;
+	if($d['post_type'] === 'project') {
+		html .= $d['post_type'];
 
-	} else if($post_type === 'publication') {
-		html .= $post_type;
+	} else if($d['post_type'] === 'publication') {
+		html .= $d['post_type'];
 
-	} else if($post_type === 'prodev') {
-		html .= $post_type;
-	} else if($post_type === 'contact') {
-		html .= $post_type;
+	} else if($d['post_type'] === 'prodev') {
+		html .= $d['post_type'];
+	} else if($d['post_type'] === 'contact') {
+		html .= $d['post_type'];
 
-	} else if($post_type === 'story') {
-		html .= $post_type;
+	} else if($d['post_type'] === 'story') {
+		html .= $d['post_type'];
 	}
 	$html .= "</div>";
 	return $html;
