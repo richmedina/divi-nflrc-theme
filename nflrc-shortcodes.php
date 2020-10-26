@@ -272,19 +272,25 @@ function nflrc_meta_display_func() {
 	$html = "<div>";	
 
 	if($d['post_type'] === 'project') {
-		$html .= "<h4>{$d['post_type']}</h4>";
+		$html .= "";
 
-	} else if($d['post_type'] === 'publication') {
-		$html .= "<h4>{$d['post_type']}</h4>";
+	} else if ($d['post_type'] === 'publication') {
+		if ($d['oer']) {
+			$html .= "OER";
+		}
+		$html .= "<a href='{$d['ext_url']}'>view</a>";
+		$html .= "<a href='{$d['oclc_url']}'>oclc</a>";
+		$html .= "<a href='{$d['order_url']}'>order</a>";
+		$html .= "";
 
-	} else if($d['post_type'] === 'prodev') {
-		$html .= "<h4>{$d['post_type']}</h4>";
+	} else if ($d['post_type'] === 'prodev') {
+		$html .= "";
 
-	} else if($d['post_type'] === 'contact') {
-		$html .= "<h4>{$d['post_type']}</h4>";
+	} else if ($d['post_type'] === 'contact') {
+		$html .= "";
 
-	} else if($d['post_type'] === 'story') {
-		$html .= "<h4>{$d['post_type']}</h4>";
+	} else if ($d['post_type'] === 'story') {
+		$html .= "";
 	}
 
 	$html .= "</div>";
