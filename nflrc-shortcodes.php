@@ -267,29 +267,29 @@ function nflrc_contact_grid_func($atts, $content = null) {
 
 add_shortcode('nflrc_meta_display', 'nflrc_meta_display_func');
 function nflrc_meta_display_func() {
-	global $post;
-	// var_dump($d);
-	// $d = read_nflrc_fields($post);
+	// global $post;
+	// // var_dump($d);
+	// // $d = read_nflrc_fields($post);
 	
-	$html = "<div>";
+	// $html = "<div>";
+	// return "here";
+
+	// if($d['post_type'] === 'project') {
+	// 	html .= $d['post_type'];
+
+	// } else if($d['post_type'] === 'publication') {
+	// 	html .= $d['post_type'];
+
+	// } else if($d['post_type'] === 'prodev') {
+	// 	html .= $d['post_type'];
+	// } else if($d['post_type'] === 'contact') {
+	// 	html .= $d['post_type'];
+
+	// } else if($d['post_type'] === 'story') {
+	// 	html .= $d['post_type'];
+	// }
+	// $html .= "</div>";
 	return "here";
-
-	if($d['post_type'] === 'project') {
-		html .= $d['post_type'];
-
-	} else if($d['post_type'] === 'publication') {
-		html .= $d['post_type'];
-
-	} else if($d['post_type'] === 'prodev') {
-		html .= $d['post_type'];
-	} else if($d['post_type'] === 'contact') {
-		html .= $d['post_type'];
-
-	} else if($d['post_type'] === 'story') {
-		html .= $d['post_type'];
-	}
-	$html .= "</div>";
-	return $html;
 }
 
 
