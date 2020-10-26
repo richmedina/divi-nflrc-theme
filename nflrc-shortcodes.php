@@ -295,6 +295,16 @@ function nflrc_meta_display_func() {
 }
 
 
+add_shortcode('nflrc_item_tags', 'nflrc_item_tags_func');
+function nflrc_item_tags_func() {
+	global $post;
+	
+    $html .=    "<div class='tags'>";
+    $html .=        "<p>" . get_the_term_list($post->ID, ['focus_area', 'language'], ' ', ' ') . "</p>";
+    $html .=    "</div>";
+	return $html;
+}
+
 add_shortcode('nflrc_debug', 'nflrc_debug_func');
 function nflrc_debug_func() {
 		// $t = '2018-2022';
