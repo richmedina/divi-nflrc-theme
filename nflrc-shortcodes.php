@@ -275,7 +275,7 @@ function nflrc_meta_display_func() {
 	$html = "<div class='item-meta-list'>";	
 
 	if($d['post_type'] === 'project') {
-		$grant_cycle = get_the_term_list($post->ID, 'grant_period', '|', ' ');
+		$grant_cycle = get_the_term_list($post->ID, 'grant_period', ' ', '|');
 		$html .= "<ul class='stacked'>";
 		$html .= "<li>Project Director: {$d['director']}</li>";
 		$html .= "<li>Period: {$grant_cycle}</li>";
