@@ -272,9 +272,11 @@ function nflrc_meta_display_func() {
 	$html = "<div class='item-meta-list'>";	
 
 	if($d['post_type'] === 'project') {
-		$html .= "<p>{$d['director']}</p>";
-		$html .= "<p>{$d['cycle']}</p>";
-		$html .= "<p>{$d['language']}</p>";
+		$html .= "<ul style='list-style: none;'>";
+		$html .= "<li>Project Director: {$d['director']}</li>";
+		$html .= "<li>Grant Period: {$d['cycle']}</li>";
+		$html .= "<li>Language(s): {$d['language']}</li>";
+		$html .= "</ul>";
 
 	} else if ($d['post_type'] === 'publication') {
 		$html .= "<p>{$d['author']}</p>";
