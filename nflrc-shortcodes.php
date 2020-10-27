@@ -285,7 +285,7 @@ function nflrc_meta_display_func() {
 
 	} else if ($d['post_type'] === 'publication') {
 		$html .= "<p>{$d['author']}</p>";
-		if ($d['category']) $html .= "<p>{$d['category']}</p>";
+		if ($d['category']) $html .= "<p>({$d['category']})</p>";
 		
 		$html .= "<p><ul>";
 		if ($d['oer']) $html .= "<li><img src='/media/img/logos/oer-logo.png' alt='OER logo'></li>";
