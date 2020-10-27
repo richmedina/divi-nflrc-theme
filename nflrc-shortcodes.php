@@ -272,16 +272,18 @@ add_shortcode('nflrc_meta_display', 'nflrc_meta_display_func');
 function nflrc_meta_display_func() {
 	global $post;
 	$d = read_nflrc_fields($post);
-	$html = "<div class='item-meta-list-normal'>";	
+	$html = "";	
 
 	if($d['post_type'] === 'project') {
+		$html .= "<div class='item-meta-list-normal'>";	
 		$html .= "<ul>";
 		$html .= "<li>Project Director: {$d['director']}</li>";
-		$html .= "<li> | {$d['cycle']}</li>";
-		$html .= "<li> | {$d['language']}</li>";
+		$html .= "<li>{$d['cycle']}</li>";
+		$html .= "<li>{$d['language']}</li>";
 		$html .= "</ul>";
 
 	} else if ($d['post_type'] === 'publication') {
+		$html .= "<div class='item-meta-list'>";	
 		$html .= "<p>{$d['author']}</p>";
 		$html .= "<ul>";
 		if ($d['oer']) $html .= "<li><img src='/media/img/logos/oer-logo.png' alt='OER logo'></li>";
@@ -291,11 +293,12 @@ function nflrc_meta_display_func() {
 		$html .= "</ul>";
 
 	} else if ($d['post_type'] === 'prodev') {
+		$html .= "<div class='item-meta-list-normal'>";
 		$html .= "<p>{$d['event_date']}</p>";
 		$html .= "<ul>";
 		$html .= "<li>Project Director: {$d['director']}</li>";
-		$html .= "<li> | {$d['facilitator']}</li>";
-		$html .= "<li> | {$d['event_type']}</li>";
+		$html .= "<li>{$d['facilitator']}</li>";
+		$html .= "<li>{$d['event_type']}</li>";
 		$html .= "</ul>";
 
 	} else if ($d['post_type'] === 'contact') {
