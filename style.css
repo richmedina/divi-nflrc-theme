@@ -123,7 +123,7 @@ ul.toclist > li:hover {text-decoration: none; background-color: #EAECEE; padding
 
 .tags a {
     background-color: #D7DBDD;
-    color: #333;
+    color: black;
     padding: 2px 5px 2px 5px;
     text-decoration: none;
     border-radius: 1px 1px 1px 1px;
