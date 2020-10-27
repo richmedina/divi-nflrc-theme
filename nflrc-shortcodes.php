@@ -272,10 +272,10 @@ add_shortcode('nflrc_meta_display', 'nflrc_meta_display_func');
 function nflrc_meta_display_func() {
 	global $post;
 	$d = read_nflrc_fields($post);
-	$html = "<div class='item-meta-list'>";	
+	$html = "<div class='.item-meta-list-normal'>";	
 
 	if($d['post_type'] === 'project') {
-		$html .= "<ul class='list_stacked'>";
+		$html .= "<ul>";
 		$html .= "<li>Project Director: {$d['director']}</li>";
 		$html .= "<li> | {$d['cycle']}</li>";
 		$html .= "<li> | {$d['language']}</li>";
