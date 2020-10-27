@@ -315,7 +315,7 @@ function nflrc_item_tags_func() {
 	global $post;
 	
     $html .=    "<div class='tags' style='text-align: left;'><ul>";
-    $html .=    	get_the_term_list($post->ID, ['focus_area', 'language', 'professional_learning', 'resource_type', 'grant_period'], '<li>', '</li>');
+    $html .=    	get_the_term_list($post->ID, ['focus_area', 'language', 'professional_learning', 'resource_type', 'grant_period'], ' ', ' ');
     $html .=    "</ul></div>";
 	return $html;
 }
