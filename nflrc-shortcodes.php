@@ -277,7 +277,7 @@ function nflrc_meta_display_func() {
 	} else if ($d['post_type'] === 'publication') {
 		$html .= "<div>{$d['author']}</div>";
 		if ($d['oer']) $html .= "<span><img src='/media/img/logos/oer-logo.png' alt='OER logo'></span>";
-		if ($d['oclc_url']) $html .= " <span><a href='{$d['oclc_url']}' target='_blank'><img src='https://www.oclc.org/content/dam/oclc/common/images/logos/new/OCLC/OCLC_Logo_H_BW_NoTag.png' alt='OCLC link'></a></span> ";
+		if ($d['oclc_url']) $html .= " <span><a href='{$d['oclc_url']}' target='_blank'><img src='/media/img/logos/oclc-logo.png' alt='OCLC link'></a></span> ";
 		if ($d['order_url']) $html .= " <span class=''><a href='{$d['order_url']}' target='_blank'>order</a></span> ";
 		if ($d['ext_url']) $html .= " <span><a href='{$d['ext_url']}' target='_blank'>view</a></span> ";
 
