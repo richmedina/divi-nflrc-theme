@@ -289,10 +289,10 @@ function nflrc_meta_display_func() {
 		
 		$html .= "<p><ul>";
 		if ($d['oer']) $html .= "<li><img src='/media/img/logos/oer-logo.png' alt='OER logo'></li> ";
-		if ($d['url']) $html .= "<li><a href='{$d['url']}' target='_blank'><button class='buttoned'>Access </button></a></li>";
+		if ($d['url']) $html .= "<li><button class='buttoned'><a href='{$d['url']}' target='_blank'>Access </a></button></li>";
 		if ($d['oclc_url']) $html .= "<li><a href='{$d['oclc_url']}' target='_blank'><img src='/media/img/logos/oclc-logo.png' alt='OCLC link'></a></li> ";	
-		if ($d['order_url']) $html .= "<li><a href='{$d['order_url']}' target='_blank'><button class='buttoned'>order</button></a></li> ";
-		if ($d['ext_url']) $html .= "<li><a href='{$d['ext_url']}' target='_blank'><button class='buttoned'>View</button></a></li> ";
+		if ($d['order_url']) $html .= "<li><button class='buttoned'><a href='{$d['order_url']}' target='_blank'>order</a></button></li> ";
+		if ($d['ext_url']) $html .= "<li><button class='buttoned'><a href='{$d['ext_url']}' target='_blank'>View</a></button></li> ";
 		$html .= "</ul></p>";
 
 	} else if ($d['post_type'] === 'prodev') {
