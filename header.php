@@ -350,13 +350,7 @@
 		 */
 		echo et_core_intentionally_unescaped( apply_filters( 'et_html_main_header', $main_header ), 'html' );
 	?>
-	<div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
-<?php
-if(function_exists('bcn_display'))
-{
-bcn_display();
-}?>
-</div>
+
 		<div id="et-main-area">
 	<?php
 		/**
@@ -365,3 +359,12 @@ bcn_display();
 		 * @since 3.10
 		 */
 		do_action( 'et_before_main_content' );
+
+?>
+	<div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+		<?php
+		if(function_exists('bcn_display'))
+		{
+		bcn_display();
+		}
+	</div>
