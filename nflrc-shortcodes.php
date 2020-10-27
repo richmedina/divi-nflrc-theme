@@ -272,7 +272,9 @@ function nflrc_meta_display_func() {
 	$html = "<div class='item-meta-list'>";	
 
 	if($d['post_type'] === 'project') {
-		$html .= "";
+		$html .= "<p>{$d['director']}</p>";
+		$html .= "<p>{$d['cycle']}</p>";
+		$html .= "<p>{$d['language']}</p>";
 
 	} else if ($d['post_type'] === 'publication') {
 		$html .= "<p>{$d['author']}</p>";
