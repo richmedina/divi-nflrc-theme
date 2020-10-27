@@ -291,9 +291,8 @@ function nflrc_meta_display_func() {
 		$html .= "</ul>";
 
 	} else if ($d['post_type'] === 'prodev') {
-		$html .= "<div class='item-meta-list-normal'>";
 		$html .= "<p>{$d['event_date']}</p>";
-		$html .= "<ul>";
+		$html .= "<ul class='stacked'>";
 		$html .= "<li>Project Director: {$d['director']}</li>";
 		$html .= "<li>{$d['facilitator']}</li>";
 		$html .= "<li>{$d['event_type']}</li>";
