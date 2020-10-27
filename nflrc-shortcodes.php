@@ -284,7 +284,7 @@ function nflrc_meta_display_func() {
 		$html .= "</ul>";
 
 	} else if ($d['post_type'] === 'publication') {
-		$resource_type = get_the_term_list($post->ID, 'resource_type', ' ', '|');
+		$resource_type = get_the_terms($post->ID, 'resource_type');
 		$html .= "<p>{$d['author']}</p>";
 		if ($resource_type) $html .= "<p>({$resource_type})</p>";
 		
