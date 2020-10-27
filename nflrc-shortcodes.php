@@ -277,7 +277,7 @@ function nflrc_meta_display_func() {
 	if($d['post_type'] === 'project') {
 		$html .= "<ul class='stacked'>";
 		$html .= "<li>Project Director: {$d['director']}</li>";
-		$html .= "<li>Period: " . get_the_term_list($post->ID, ['grant_period'], ' ', ' ') . "</li>";
+		$html .= "<li>Period:" . get_the_term_list($post->ID, ['grant_period'], ' ', ' '); . "</li>";
 		$html .= "<li>{$d['language']}</li>";
 		$html .= "</ul>";
 
