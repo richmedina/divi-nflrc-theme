@@ -27,6 +27,7 @@ function read_nflrc_fields($post) {
 		$fields['url'] = $post->url;
 		$fields['oclc_url'] = $post->oclc_url;
 		$fields['order_url'] = $post->order_from;
+		$fields['category'] = $post->category;
 
 	} else if($post_type === 'prodev') {
 		$fields['language'] = $post->language;
@@ -286,6 +287,7 @@ function nflrc_meta_display_func() {
 		$html .= "<p>{$d['author']}</p>";
 		
 		$html .= "<p><ul>";
+		if ($d['category']) $html .= "<li>{$d['category']}</li>";
 		if ($d['oer']) $html .= "<li><img src='/media/img/logos/oer-logo.png' alt='OER logo'></li>";
 		if ($d['oclc_url']) $html .= "<li><a href='{$d['oclc_url']}' target='_blank'><img src='/media/img/logos/oclc-logo.png' alt='OCLC link'></a></li> ";
 		if ($d['order_url']) $html .= "<li class=''><a href='{$d['order_url']}' target='_blank'><button class='buttoned'>order</button></a></li> ";
