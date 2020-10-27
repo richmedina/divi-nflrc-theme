@@ -296,7 +296,7 @@ function nflrc_meta_display_func() {
 		$html .= "<li>{$d['event_date']}</li>";
 		$html .= "<li>Project Director: {$d['director']}</li>";
 		$html .= "<li>Co-Facilitor: {$d['facilitator']}</li>";
-		$html .= "<li>{$d['event_type']}</li>";
+		
 		$html .= "</ul>";
 
 	} else if ($d['post_type'] === 'contact') {
