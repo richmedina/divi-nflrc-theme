@@ -121,16 +121,20 @@ ul.toclist > li:hover {text-decoration: none; background-color: #EAECEE; padding
     background-color: #3f5ca9;
 }
 
-.tags {
-    padding:3px;
-    text-align: center;
-}
-.tags  a { 
+.tags a {
     background-color: #D7DBDD;
     color: black;
-    margin: 1px 5px 1px 5px;
     padding: 2px 5px 2px 5px;
-/*  font-weight: bold; */
+    text-decoration: none;
+    border-radius: 1px 1px 1px 1px;
+}
+
+.tags > ul > li {
+    list-style: none;
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 0 5px 0 5px;
+    text-align: inherit;
 }
 /*.item-content {
     min-height: 100vh;
