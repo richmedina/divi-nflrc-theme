@@ -31,6 +31,9 @@ function read_nflrc_fields($post) {
 	} else if($post_type === 'prodev') {
 		$fields['language'] = $post->language;
 		$fields['event_date'] = $post->event_date;
+		$fields['facilitator'] = $post->facilitator;
+		$fields['director'] = $post->director;
+		$fields['event_type'] = $post->event_type;
 
 	} else if($post_type === 'contact') {
 		$fields['nflrc_role'] = $post->nflrc_role;
@@ -288,7 +291,12 @@ function nflrc_meta_display_func() {
 		$html .= "</ul>";
 
 	} else if ($d['post_type'] === 'prodev') {
-		$html .= "";
+		$html .= "<p>{$d['event_date']}</p>";
+		$html .= "<ul>";
+		$html .= "<li>Project Director: {$d['director']}</li>";
+		$html .= "<li> | {$d['facilitator']}</li>";
+		$html .= "<li> | {$d['event_type']}</li>";
+		$html .= "</ul>";
 
 	} else if ($d['post_type'] === 'contact') {
 		$html .= "";
