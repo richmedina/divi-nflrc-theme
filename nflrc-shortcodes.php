@@ -275,7 +275,7 @@ function nflrc_meta_display_func() {
 	$html = "<div class='item-meta-list'>";	
 
 	if($d['post_type'] === 'project') {
-		$html .= "<ul>";
+		$html .= "<ul class='list_stacked'>";
 		$html .= "<li>Project Director: {$d['director']}</li>";
 		$html .= "<li> | {$d['cycle']}</li>";
 		$html .= "<li> | {$d['language']}</li>";
