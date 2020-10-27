@@ -272,7 +272,7 @@ function nflrc_meta_display_func() {
 	$html = "<div class='item-meta-list'>";	
 
 	if($d['post_type'] === 'project') {
-		$html .= "<ul style='list-style: none; display: block;'>";
+		$html .= "<ul style='list-style: none; display: normal;'>";
 		$html .= "<li>Project Director: {$d['director']}</li>";
 		$html .= "<li>Grant Period: {$d['cycle']}</li>";
 		$html .= "<li>Language(s): {$d['language']}</li>";
