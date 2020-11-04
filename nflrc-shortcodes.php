@@ -468,6 +468,41 @@ function import_csv_post_dates_func($atts, $content = null) {
 }
 
 
+add_shortcode('nflrc_dump_post_info', 'nflrc_dump_post_info_func');
+function nflrc_dump_post_info_func() {
+
+		$args = array(
+			'post_type' => array('project', 'prodev', 'publication', 'contact', 'story'),
+			'orderby'	=> 'post_type ID',
+	    	// 'order'   	=> 'DESC',
+			'posts_per_page' => -1,
+		);
+		$the_query = new WP_Query( $args );
+		$debugstr = "";
+		$debugstr .= "<h2>" . $the_query->post_count . " posts</h2>";
+		if ( $the_query->have_posts() ) {
+			global $post;
+		    while ( $the_query->have_posts() ) {
+		        $the_query->the_post();
+		        $d = read_nflrc_fields($post);
+		        // $title = $post->post_title;
+		        // $p_id = $post->ID;
+		        // $grant = $post->grant_cycle;
+
+		        // $wpdb->query("UPDATE $wpdb->posts SET post_date = '{$d}', post_date_gmt = '{$d}'  WHERE ID = 1500");
+		        
+		        	        
+		        $debugstr .= "<div>{$post->post_type}, {$post->ID}, {$post->guid}, {$post->post_name}</div>";
+		    }
+		    wp_reset_postdata();
+		} else {
+			$output = array(); 
+		}
+		// var_dump($output);
+		return $debugstr;
+}
+
+
 /*Set taxonomy term for a post
 wp_set_post_terms
 
