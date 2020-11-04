@@ -492,7 +492,7 @@ function nflrc_dump_post_info_func() {
 		        // $wpdb->query("UPDATE $wpdb->posts SET post_date = '{$d}', post_date_gmt = '{$d}'  WHERE ID = 1500");
 		        
 		        	        
-		        $debugstr .= "<div>{$post->post_type}, {$post->ID}, {$post->guid}, {$post->post_name}</div>";
+		        $debugstr .= "<div>{$post->post_type}, {$post->ID}, {$post->guid}, {$post->post_name}, {$post->postgres_pk}, {$post->item_number}</div>";
 		    }
 		    wp_reset_postdata();
 		} else {
