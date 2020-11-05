@@ -471,11 +471,8 @@ function import_csv_post_dates_func($atts, $content = null) {
 add_shortcode('nflrc_dump_post_info', 'nflrc_dump_post_info_func');
 function nflrc_dump_post_info_func() {
 
-		$my_post = array(
-      		'ID'           => 743,
-      		'post_name'   => 127,
-      	);
-		wp_update_post( $my_post );
+
+		
 
 		$args = array(
 			// 'post_type' => array('project', 'prodev', 'publication', 'contact', 'story'),
@@ -495,9 +492,11 @@ function nflrc_dump_post_info_func() {
 		        // $title = $post->post_title;
 		        // $p_id = $post->ID;
 		        // $grant = $post->grant_cycle;
-
-		        // $wpdb->query("UPDATE $wpdb->posts SET post_date = '{$d}', post_date_gmt = '{$d}'  WHERE ID = 1500");
-		        // $post->post_name = $post->postgres_pk;
+				$my_post = array(
+		      		'ID'          => $post->ID,
+		      		'post_name'   => $post->postgres_pk,
+		      	);
+		      	wp_update_post( $my_post );
 		        	        
 		        $debugstr .= "<div>{$post->post_type}, {$post->ID}, {$post->guid}, {$post->post_name}, {$post->postgres_pk}, {$post->item_number}</div>";
 		    }
