@@ -474,8 +474,8 @@ function nflrc_dump_post_info_func() {
 		$my_post = array(
       		'ID'           => 743,
       		'post_name'   => 743,
-      	)
-
+      	);
+		wp_update_post( $my_post );
 
 		$args = array(
 			// 'post_type' => array('project', 'prodev', 'publication', 'contact', 'story'),
