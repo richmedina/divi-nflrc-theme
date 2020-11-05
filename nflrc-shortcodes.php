@@ -473,7 +473,7 @@ function nflrc_dump_post_info_func() {
 
 		$my_post = array(
       		'ID'           => 743,
-      		'post_name'   => 743,
+      		'post_name'   => 127,
       	);
 		wp_update_post( $my_post );
 
