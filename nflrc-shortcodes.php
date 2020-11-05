@@ -492,11 +492,11 @@ function nflrc_dump_post_info_func() {
 		        // $title = $post->post_title;
 		        // $p_id = $post->ID;
 		        // $grant = $post->grant_cycle;
-				$my_post = array(
-		      		'ID'          => $post->ID,
-		      		'post_name'   => $post->postgres_pk,
-		      	);
-		      	wp_update_post( $my_post );
+				// $my_post = array(
+		  //     		'ID'          => $post->ID,
+		  //     		'post_name'   => $post->postgres_pk,
+		  //     	);
+		      	// wp_update_post( $my_post );
 		        	        
 		        $debugstr .= "<div>{$post->post_type}, {$post->ID}, {$post->guid}, {$post->post_name}, {$post->postgres_pk}, {$post->item_number}</div>";
 		    }
