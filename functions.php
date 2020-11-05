@@ -28,7 +28,7 @@ function dp_dfg_custom_query_function($query, $props) {
             'posts_per_page' => -1,
             'meta_query' => array(            	
             	array('key'=>'nflrc_staff','compare'=>'!=','value'=>1),
-            	array('key'=>'nflrc_role_type','compare'=>'!=','value'=>'ADVBOARD'),
+            	array('key'=>'nflrc_role_type','compare'=>'==','value'=>''),
             ),
         );
     } 
