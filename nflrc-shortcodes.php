@@ -476,7 +476,7 @@ function nflrc_dump_post_info_func() {
 
 		$args = array(
 			// 'post_type' => array('project', 'prodev', 'publication', 'contact', 'story'),
-			'post_type' => array('publication'),
+			'post_type' => array('contact'),
 			'orderby'	=> 'ID',
 	    	// 'order'   	=> 'DESC',
 			'posts_per_page' => -1,
@@ -494,7 +494,7 @@ function nflrc_dump_post_info_func() {
 		        // $grant = $post->grant_cycle;
 				$my_post = array(
 		      		'ID'          => $post->ID,
-		      		'post_name'   => $post->item_number,
+		      		'post_name'   => $post->postgres_pk,
 		      	);
 		      	wp_update_post( $my_post );
 		        	        
