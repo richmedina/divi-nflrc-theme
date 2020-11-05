@@ -476,7 +476,7 @@ function nflrc_dump_post_info_func() {
 
 		$args = array(
 			// 'post_type' => array('project', 'prodev', 'publication', 'contact', 'story'),
-			'post_type' => array('contact'),
+			'post_type' => array('story'),
 			'orderby'	=> 'ID',
 	    	// 'order'   	=> 'DESC',
 			'posts_per_page' => -1,
