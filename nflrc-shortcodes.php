@@ -158,6 +158,7 @@ function import_csv_page_content_form_func($atts, $content = null) {
 	      		'post_content'=> value[1],
 	      	);
 	      	wp_update_post( $my_post );
+	      	$output .= value[1];
 		}
 		wp_reset_postdata();
 	}
