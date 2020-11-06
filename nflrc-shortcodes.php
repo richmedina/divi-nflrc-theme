@@ -161,7 +161,7 @@ function import_csv_tag_oer_form_func($atts, $content = null) {
 	$output .= $count;
 	return $output;
   } else {
-  	echo '<h2>Import object/term relations from django site:</h2>';
+  	echo '<h2>Import items to tag as OER from django site:</h2>';
     echo '<form action="" method="post" enctype="multipart/form-data">';
     echo '<input type="file" name="csv_file">';
     echo '<input type="submit" name="submit" value="submit">';
