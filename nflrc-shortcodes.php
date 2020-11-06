@@ -191,11 +191,11 @@ function import_csv_page_content_form_func($atts, $content = null) {
 			$count += 1;
 			global $post;
 		    $posts->the_post();
-			// $my_post = array(
-	  //     		'ID'          => $post->ID,
-	  //     		'post_content'=> value[1],
-	  //     	);
-	      	// wp_update_post( wp_slash( $my_post ) );
+			$my_post = array(
+	      		'ID'          => $post->ID,
+	      		'post_content'=> value[1],
+	      	);
+	      	wp_update_post( $my_post );
 	      	// $wpdb->query("UPDATE $wpdb->posts SET post_date = '{$d}', post_date_gmt = '{$d}'  WHERE ID = 1500");
 	      	$output .= $value[1];
 		}
