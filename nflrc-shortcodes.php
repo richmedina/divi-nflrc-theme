@@ -157,7 +157,7 @@ function import_csv_page_content_form_func($atts, $content = null) {
 	      		'ID'          => $post->ID,
 	      		'post_content'=> value[1],
 	      	);
-	      	wp_update_post( wp_slash( $my_post ) );
+	      	// wp_update_post( wp_slash( $my_post ) );
 	      	$output .= value[1];
 		}
 		wp_reset_postdata();
