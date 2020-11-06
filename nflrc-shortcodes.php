@@ -131,6 +131,47 @@ function import_csv_tag_mapping_form_func($atts, $content = null) {
   }
 }
 
+add_shortcode('import_csv_page_content_form', 'import_csv_page_content_form_func');
+function import_csv_page_content_form_func($atts, $content = null) {
+  if (isset($_POST['submit'])) {
+    $csv_file = $_FILES['csv_file'];
+    $csv_to_array = array_map('str_getcsv', file($csv_file['tmp_name']));
+	$output = "";
+	$count = 0;
+    foreach ($csv_to_array as $key => $value) {
+    	// var_dump($value);
+    	//  [0]=> string(7) "project" [1]=> string(2) "48" [2]=> string(10) "assessment" 
+		$args = array(
+			'numberposts' 		=> 1,
+			'meta_key'       	=> 'postgres_pk',
+			'meta_value'		=> $value[0],
+		    'post_type'      	=> 'publication'
+		);
+		$posts = new WP_Query($args);
+
+		if ( $posts->have_posts() ) {
+			$count += 1;
+			global $post;
+		    $posts->the_post();
+			$my_post = array(
+	      		'ID'          => $post->ID,
+	      		'post_content'=> value[1],
+	      	);
+	      	wp_update_post( $my_post );
+		}
+		wp_reset_postdata();
+	}
+	$output .= $count;
+	return $output;
+  } else {
+  	echo '<h2>csv content from django site:</h2>';
+    echo '<form action="" method="post" enctype="multipart/form-data">';
+    echo '<input type="file" name="csv_file">';
+    echo '<input type="submit" name="submit" value="submit">';
+    echo '</form>';
+  }
+}
+
 // [nflrc_feature_list]
 /* Displays all post types flagged as featured ordered by featured rank.
 */
