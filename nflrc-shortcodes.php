@@ -191,11 +191,12 @@ function import_csv_page_content_form_func($atts, $content = null) {
 			$count += 1;
 			global $post;
 		    $posts->the_post();
-			$my_post = array(
-	      		'ID'          => $post->ID,
-	      		'post_content'=> value[1],
-	      	);
+			// $my_post = array(
+	  //     		'ID'          => $post->ID,
+	  //     		'post_content'=> value[1],
+	  //     	);
 	      	// wp_update_post( wp_slash( $my_post ) );
+	      	// $wpdb->query("UPDATE $wpdb->posts SET post_date = '{$d}', post_date_gmt = '{$d}'  WHERE ID = 1500");
 	      	$output .= value[1];
 		}
 		wp_reset_postdata();
@@ -203,7 +204,7 @@ function import_csv_page_content_form_func($atts, $content = null) {
 	$output .= $count;
 	return $output;
   } else {
-  	echo '<h2>csv content from django site:</h2>';
+  	echo '<h2>migrate content from django site from csv (PK, CONTENT):</h2>';
     echo '<form action="" method="post" enctype="multipart/form-data">';
     echo '<input type="file" name="csv_file">';
     echo '<input type="submit" name="submit" value="submit">';

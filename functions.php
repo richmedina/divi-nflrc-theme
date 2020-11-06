@@ -5,13 +5,13 @@ function divi__child_theme_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'divi__child_theme_enqueue_styles' );
  
 
-add_action( 'et_before_main_content', function () {
-    echo '<div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">';
-    if ( function_exists('bcn_display') ) {
-        bcn_display();
-    }
-    echo '</div>';
-} );
+// add_action( 'et_before_main_content', function () {
+//     echo '<div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">';
+//     if ( function_exists('bcn_display') ) {
+//         bcn_display();
+//     }
+//     echo '</div>';
+// } );
 
 
 //you can add custom functions below this line:
