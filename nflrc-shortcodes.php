@@ -139,7 +139,7 @@ function import_csv_page_content_form_func($atts, $content = null) {
 	$output = "";
 	$count = 0;
     foreach ($csv_to_array as $key => $value) {
-    	// var_dump($value);
+    	var_dump($value);
     	//  [0]=> string(7) "project" [1]=> string(2) "48" [2]=> string(10) "assessment" 
 		$args = array(
 			'numberposts' 		=> 1,
