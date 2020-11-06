@@ -197,7 +197,7 @@ function import_csv_page_content_form_func($atts, $content = null) {
 	  //     	);
 	      	// wp_update_post( wp_slash( $my_post ) );
 	      	// $wpdb->query("UPDATE $wpdb->posts SET post_date = '{$d}', post_date_gmt = '{$d}'  WHERE ID = 1500");
-	      	$output .= value[1];
+	      	$output .= $value[1];
 		}
 		wp_reset_postdata();
 	}
