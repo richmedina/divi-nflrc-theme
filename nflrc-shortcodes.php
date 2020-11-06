@@ -144,7 +144,7 @@ function import_csv_tag_oer_form_func($atts, $content = null) {
 		$args = array(
 			'numberposts' 		=> 1,
 			'meta_key'       	=> 'postgres_pk',
-			'meta_value'		=> $value[1],
+			'meta_value'		=> $value[0],
 		    'post_type'      	=> 'publication'
 		);
 		$posts = new WP_Query($args);
