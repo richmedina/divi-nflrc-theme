@@ -131,6 +131,44 @@ function import_csv_tag_mapping_form_func($atts, $content = null) {
   }
 }
 
+add_shortcode('import_csv_tag_oer_form', 'import_csv_tag_oer_form_func');
+function import_csv_tag_oer_form_func($atts, $content = null) {
+  if (isset($_POST['submit'])) {
+    $csv_file = $_FILES['csv_file'];
+    $csv_to_array = array_map('str_getcsv', file($csv_file['tmp_name']));
+	$output = "";
+	$count = 0;
+    foreach ($csv_to_array as $key => $value) {
+    	// var_dump($value);
+    	//  [0]=> string(7) "project" [1]=> string(2) "48" [2]=> string(10) "assessment" 
+		$args = array(
+			'numberposts' 		=> 1,
+			'meta_key'       	=> 'postgres_pk',
+			'meta_value'		=> $value[1],
+		    'post_type'      	=> 'publication'
+		);
+		$posts = new WP_Query($args);
+
+		if ( $posts->have_posts() ) {
+			$count += 1;
+			global $post;
+		    $posts->the_post();
+		    wp_add_post_tags($post->ID, 'OER' );
+		    $output .= "<div>{$post->ID} {$post->post_name}}</div>";
+		}
+		wp_reset_postdata();
+	}
+	$output .= $count;
+	return $output;
+  } else {
+  	echo '<h2>Import object/term relations from django site:</h2>';
+    echo '<form action="" method="post" enctype="multipart/form-data">';
+    echo '<input type="file" name="csv_file">';
+    echo '<input type="submit" name="submit" value="submit">';
+    echo '</form>';
+  }
+}
+
 add_shortcode('import_csv_page_content_form', 'import_csv_page_content_form_func');
 function import_csv_page_content_form_func($atts, $content = null) {
   if (isset($_POST['submit'])) {
