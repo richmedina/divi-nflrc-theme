@@ -153,7 +153,7 @@ function import_csv_tag_oer_form_func($atts, $content = null) {
 			$count += 1;
 			global $post;
 		    $posts->the_post();
-		    wp_add_post_tags($post->ID, 'OER' );
+		    // wp_add_post_tags($post->ID, 'OER' );
 		    $output .= "<div>{$post->ID} {$post->post_name}}</div>";
 		}
 		wp_reset_postdata();
