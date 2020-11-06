@@ -197,7 +197,7 @@ function import_csv_page_content_form_func($atts, $content = null) {
 	  //     	);
 	      	// wp_update_post( $my_post );
 	      	$new_content = $value[1];
-	      	$wpdb->query("UPDATE $wpdb->posts SET post_content = '{$new_content}' WHERE ID = {$post_ID}");
+	      	$wpdb->query("UPDATE $wpdb->posts SET post_content = '{$new_content}' WHERE ID = '{$post->ID}'");
 	      	$output .= $new_content;
 		}
 		wp_reset_postdata();
