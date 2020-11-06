@@ -171,6 +171,7 @@ function import_csv_tag_oer_form_func($atts, $content = null) {
 
 add_shortcode('import_csv_page_content_form', 'import_csv_page_content_form_func');
 function import_csv_page_content_form_func($atts, $content = null) {
+  global $wpdb;
   if (isset($_POST['submit'])) {
     $csv_file = $_FILES['csv_file'];
     $csv_to_array = array_map('str_getcsv', file($csv_file['tmp_name']));
@@ -199,7 +200,7 @@ function import_csv_page_content_form_func($atts, $content = null) {
 	      	$new_content = $value[2];
 	      	var_dump($new_content);
 	      	$output .= $new_content;
-	      	$wpdb->query("UPDATE $wpdb->posts SET post_content = {$new_content} WHERE ID = {$post->ID}");
+	      	$wpdb->query("UPDATE {$wpdb->posts} SET post_content = {$new_content} WHERE ID = {$post->ID}");
 	      	
 		}
 		wp_reset_postdata();
