@@ -122,7 +122,7 @@ function import_json_data_form_func($atts, $content = null) {
 	      		'ID'          => $post->ID,
 	      		'post_content'=> value[2],
 	      	);
-	      	// wp_update_post( $my_post );
+	      	wp_update_post( $my_post );
 	      	$output .= "<div>{$key1} ==> {$value[0]} | {$value[1]}</div>";     	
 		}
 		wp_reset_postdata();
