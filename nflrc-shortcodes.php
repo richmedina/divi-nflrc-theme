@@ -98,19 +98,18 @@ function import_json_data_form_func($atts, $content = null) {
   	$count = 0;
   	$output = "";
     $json_form_file = $_FILES['json_file'];
-    // var_dump($json_form_file['tmp_name']);
     $json_obj = file_get_contents($json_form_file['tmp_name']);
-    // var_dump($json_obj);
     $json_data = json_decode($json_obj,true);
-	// var_dump($json_data)
-	foreach ($json_data as $key1 => $value) {
-	    
 
+	foreach ($json_data as $key1 => $value) {
+	    // [POST TYPE, POSTGRES_PK, DESCRIPTION, THUMBNAIL_DESC, OTHER]
+
+		// Get the post based on type and postgres_pk field
 		$args = array(
 			'numberposts' 		=> 1,
 			'meta_key'       	=> 'postgres_pk',
-			'meta_value'		=> $value[0],
-		    'post_type'      	=> 'publication'
+			'meta_value'		=> $value[1],
+		    'post_type'      	=> $value[0],
 		);
 		$posts = new WP_Query($args);
 
@@ -121,6 +120,7 @@ function import_json_data_form_func($atts, $content = null) {
 			$my_post = array(
 	      		'ID'          => $post->ID,
 	      		'post_content'=> $value[2],
+	      		'post_excerpt'=> $value[3],
 	      	);
 	      	wp_update_post( $my_post );
 	      	$output .= "<div>{$key1} ==> {$value[0]} | {$value[1]}</div>";     	
