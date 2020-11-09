@@ -100,8 +100,7 @@ function import_json_data_form_func($atts, $content = null) {
     $json_form_file = $_FILES['json_file'];
     $json_obj = file_get_contents($json_form_file['tmp_name']);
     $json_data = json_decode($json_obj,true);
-    var_dump($json_data);
-	
+    	
 	foreach ($json_data as $key1 => $value) {
 	    // [POST TYPE, POSTGRES_PK, DESCRIPTION, THUMBNAIL_DESC, OTHER]
 
