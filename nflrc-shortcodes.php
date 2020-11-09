@@ -103,7 +103,7 @@ function import_json_data_form_func($atts, $content = null) {
 
 	foreach ($json_data as $key1 => $value) {
 	    // [POST TYPE, POSTGRES_PK, DESCRIPTION, THUMBNAIL_DESC, OTHER]
-
+		var_dump($value);
 		// Get the post based on type and postgres_pk field
 		$args = array(
 			'numberposts' 		=> 1,
