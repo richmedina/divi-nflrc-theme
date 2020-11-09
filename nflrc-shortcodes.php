@@ -95,6 +95,7 @@ function import_csv_tags_form_func($atts, $content = null) {
 add_shortcode('import_json_data_form', 'import_json_data_form_func');
 function import_json_data_form_func($atts, $content = null) {
   if (isset($_POST['submit'])) {
+  	$count = 0;
   	$output = "";
     $json_form_file = $_FILES['json_file'];
     // var_dump($json_form_file['tmp_name']);
@@ -102,9 +103,32 @@ function import_json_data_form_func($atts, $content = null) {
     // var_dump($json_obj);
     $json_data = json_decode($json_obj,true);
 	// var_dump($json_data)
-	foreach ($json_data as $key1 => $value1) {
-	    $output .= "<div>{$key1} ==> {$value1[0]} | {$value1[1]}</div>";
+	foreach ($json_data as $key1 => $value) {
+	    
+
+		$args = array(
+			'numberposts' 		=> 1,
+			'meta_key'       	=> 'postgres_pk',
+			'meta_value'		=> $value[0],
+		    'post_type'      	=> 'publication'
+		);
+		$posts = new WP_Query($args);
+
+		if ( $posts->have_posts() ) {
+			$count += 1;
+			global $post;
+		    $posts->the_post();
+			$my_post = array(
+	      		'ID'          => $post->ID,
+	      		'post_content'=> value[2],
+	      	);
+	      	// wp_update_post( $my_post );
+	      	$output .= "<div>{$key1} ==> {$value[0]} | {$value[1]}</div>";     	
+		}
+		wp_reset_postdata();
+
 	}
+	$output .= "<h2>{$count}</h2>";
 	return $output;
     
   } else {
