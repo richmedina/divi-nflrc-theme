@@ -120,7 +120,7 @@ function import_json_data_form_func($atts, $content = null) {
 		    $posts->the_post();
 			$my_post = array(
 	      		'ID'          => $post->ID,
-	      		'post_content'=> value[2],
+	      		'post_content'=> $value[2],
 	      	);
 	      	wp_update_post( $my_post );
 	      	$output .= "<div>{$key1} ==> {$value[0]} | {$value[1]}</div>";     	
