@@ -92,6 +92,30 @@ function import_csv_tags_form_func($atts, $content = null) {
   }
 }
 
+add_shortcode('import_json_data_form', 'import_json_data_form_func');
+function import_json_data_form_func($atts, $content = null) {
+  if (isset($_POST['submit'])) {
+  	$output = "";
+    $json_form_file = $_FILES['json_file'];
+    // var_dump($json_form_file['tmp_name']);
+    $json_obj = file_get_contents($json_form_file['tmp_name']);
+    // var_dump($json_obj);
+    $json_data = json_decode($json_obj,true);
+	// var_dump($json_data)
+	foreach ($json_data as $key1 => $value1) {
+	    $output .= "<div>{$key1} ==> {$value1[0]} | {$value1[1]}</div>";
+	}
+	return $output;
+    
+  } else {
+  	echo '<h2>Import json data from Django site (test function):</h2>';
+    echo '<form action="" method="post" enctype="multipart/form-data">';
+    echo '<input type="file" name="json_file">';
+    echo '<input type="submit" name="submit" value="submit">';
+    echo '</form>';
+  }
+}
+
 
 add_shortcode('import_csv_tag_mapping_form', 'import_csv_tag_mapping_form_func');
 function import_csv_tag_mapping_form_func($atts, $content = null) {
