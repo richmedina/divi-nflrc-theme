@@ -92,8 +92,8 @@ function import_csv_tags_form_func($atts, $content = null) {
   }
 }
 
-add_shortcode('import_json_data_form', 'import_json_data_form_func');
-function import_json_data_form_func($atts, $content = null) {
+add_shortcode('import_json_data_migration_form', 'import_json_data_migration_form_func');
+function import_json_data_migration_form_func($atts, $content = null) {
   if (isset($_POST['submit'])) {
   	$count = 0;
   	$output = "";
@@ -122,8 +122,57 @@ function import_json_data_form_func($atts, $content = null) {
 	      		'post_content'=> $value[2],
 	      		'post_excerpt'=> $value[3],
 	      	);
-	      	// wp_update_post( $my_post );
+	      	// <== SAFETY SWITCH ON ==> wp_update_post( $my_post );
 	      	$output .= "<div>{$key1} ==> {$value[0]} | {$value[1]}</div>";     	
+		}
+		wp_reset_postdata();
+
+	}
+	$output .= "<h2>{$count}</h2>";
+	return $output;
+    
+  } else {
+  	echo '<h2>Import json data from Django site (test function):</h2>';
+    echo '<form action="" method="post" enctype="multipart/form-data">';
+    echo '<input type="file" name="json_file">';
+    echo '<input type="submit" name="submit" value="submit">';
+    echo '</form>';
+  }
+}
+
+add_shortcode('import_json_ordering_form', 'import_json_ordering_form_func');
+function import_json_ordering_form_func($atts, $content = null) {
+  if (isset($_POST['submit'])) {
+  	$count = 0;
+  	$output = "";
+    $json_form_file = $_FILES['json_file'];
+    $json_obj = file_get_contents($json_form_file['tmp_name']);
+    $json_data = json_decode($json_obj,true);
+    var_dump($json_data);
+    
+	foreach ($json_data as $key1 => $value) {
+	    // [POST TYPE, POSTGRES_PK, IS FEATURED, FEATURED RANK, LISTING RANK]
+
+		// Get the post based on type and postgres_pk field
+		$args = array(
+			'numberposts' 		=> 1,
+			'meta_key'       	=> 'postgres_pk',
+			'meta_value'		=> $value[1],
+		    'post_type'      	=> $value[0],
+		);
+		$posts = new WP_Query($args);
+
+		if ( $posts->have_posts() ) {
+			$count += 1;
+			global $post;
+		    $posts->the_post();
+			$my_post = array(
+	      		'ID'          => $post->ID,
+	      		'menu_order'  => $value[2],
+	      	);
+	      	// <== SAFETY SWITCH ON ==> 
+	      	//wp_update_post( $my_post );
+	      	$output .= "<div>{$key1} ==> {$value[0]} | {$value[1]} | {$value[2]}</div>";     	
 		}
 		wp_reset_postdata();
 
@@ -210,53 +259,6 @@ function import_csv_tag_oer_form_func($atts, $content = null) {
 	return $output;
   } else {
   	echo '<h2>Import items to tag as OER from django site:</h2>';
-    echo '<form action="" method="post" enctype="multipart/form-data">';
-    echo '<input type="file" name="csv_file">';
-    echo '<input type="submit" name="submit" value="submit">';
-    echo '</form>';
-  }
-}
-
-add_shortcode('import_csv_page_content_form', 'import_csv_page_content_form_func');
-function import_csv_page_content_form_func($atts, $content = null) {
-  global $wpdb;
-  if (isset($_POST['submit'])) {
-    $csv_file = $_FILES['csv_file'];
-    $csv_to_array = array_map('str_getcsv', file($csv_file['tmp_name']));
-	$output = "";
-	$count = 0;
-    foreach ($csv_to_array as $key => $value) {
-    	// var_dump($value);
-    	//  [0]=> string(7) "project" [1]=> string(2) "48" [2]=> string(10) "assessment" 
-		$args = array(
-			'numberposts' 		=> 1,
-			'meta_key'       	=> 'postgres_pk',
-			'meta_value'		=> $value[0],
-		    'post_type'      	=> 'publication'
-		);
-		$posts = new WP_Query($args);
-
-		if ( $posts->have_posts() ) {
-			$count += 1;
-			global $post;
-		    $posts->the_post();
-			// $my_post = array(
-	  //     		'ID'          => $post->ID,
-	  //     		'post_content'=> value[1],
-	  //     	);
-	      	// wp_update_post( $my_post );
-	      	$new_content = $value[2];
-	      	var_dump($value);
-	      	$output .= $new_content;
-	      	$wpdb->query("UPDATE $wpdb->posts SET post_content = {$new_content} WHERE ID = {$post->ID}");
-	      	
-		}
-		wp_reset_postdata();
-	}
-	$output .= $count;
-	return $output;
-  } else {
-  	echo '<h2>migrate content from django site from csv (PK, CONTENT):</h2>';
     echo '<form action="" method="post" enctype="multipart/form-data">';
     echo '<input type="file" name="csv_file">';
     echo '<input type="submit" name="submit" value="submit">';
