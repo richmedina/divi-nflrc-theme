@@ -149,7 +149,7 @@ function import_json_ordering_form_func($atts, $content = null) {
     $json_obj = file_get_contents($json_form_file['tmp_name']);
     $json_data = json_decode($json_obj,true);
     var_dump($json_data);
-    
+
 	foreach ($json_data as $key1 => $value) {
 	    // [POST TYPE, POSTGRES_PK, IS FEATURED, FEATURED RANK, LISTING RANK]
 
@@ -166,12 +166,14 @@ function import_json_ordering_form_func($atts, $content = null) {
 			$count += 1;
 			global $post;
 		    $posts->the_post();
+
+		    wp_add_post_tags($post->ID, "featured");
 			$my_post = array(
 	      		'ID'          => $post->ID,
-	      		'menu_order'  => $value[2],
+	      		'menu_order'  => $value[3],
 	      	);
 	      	// <== SAFETY SWITCH ON ==> 
-	      	//wp_update_post( $my_post );
+	      	wp_update_post( $my_post );
 	      	$output .= "<div>{$key1} ==> {$value[0]} | {$value[1]} | {$value[2]}</div>";     	
 		}
 		wp_reset_postdata();
