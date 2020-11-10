@@ -167,13 +167,13 @@ function import_json_ordering_form_func($atts, $content = null) {
 			global $post;
 		    $posts->the_post();
 
-		    wp_add_post_tags($post->ID, "featured");
+		    // wp_add_post_tags($post->ID, "featured");
 			$my_post = array(
 	      		'ID'          => $post->ID,
 	      		'menu_order'  => $value[3],
 	      	);
 	      	// <== SAFETY SWITCH ON ==> 
-	      	wp_update_post( $my_post );
+	      	// wp_update_post( $my_post );
 	      	$output .= "<div>{$key1} ==> {$value[0]} | {$value[1]} | {$value[2]}</div>";     	
 		}
 		wp_reset_postdata();
@@ -536,10 +536,10 @@ add_shortcode('nflrc_mod_all_post_dates', 'nflrc_mod_post_dates_func');
 function nflrc_mod_post_dates_func() {
 		// global $wpdb;
 		$args = array(
-			'post_type' => array('project', 'prodev', 'publication', 'contact', 'story'),
-			'meta_key' 	=> 'grant_cycle',
-			'orderby'	=> 'grant_cycle',
-	    	'order'   	=> 'DESC',
+			'post_type' => array('contact'),
+			// 'meta_key' 	=> 'grant_cycle',
+			// 'orderby'	=> 'grant_cycle',
+	  //   	'order'   	=> 'DESC',
 			'posts_per_page' => -1,
 		);
 		$the_query = new WP_Query( $args );
@@ -549,12 +549,11 @@ function nflrc_mod_post_dates_func() {
 			global $post;
 		    while ( $the_query->have_posts() ) {
 		        $the_query->the_post();
-		        $d = read_nflrc_fields($post);
+		        // $d = read_nflrc_fields($post);
 		        // $title = $post->post_title;
 		        // $p_id = $post->ID;
 		        // $grant = $post->grant_cycle;
-
-		        // $wpdb->query("UPDATE $wpdb->posts SET post_date = '{$d}', post_date_gmt = '{$d}'  WHERE ID = 1500");
+		        $wpdb->query("UPDATE $wpdb->posts SET post_date = '2000-01-01 00:00:00.000000', post_date_gmt = '2000-01-01 00:00:00.000000'  WHERE ID = {$post->ID}");
 		        
 		        	        
 		        $debugstr .= "<div>{$d['cycle']} | {$d['title']} | </div>";
