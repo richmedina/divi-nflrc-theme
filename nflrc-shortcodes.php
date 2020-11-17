@@ -614,7 +614,7 @@ function nflrc_debug_func() {
 		        } else {
 		        	// update_post_meta( $post->ID, 'is_oer', false );
 		        }
-		        $debugstr .= "<h2>" . $count . "</h2>";
+		        
 
 		        /*$debugstr .= "<article class='grid_block'>";
 				$debugstr .= "<div>{}</div>";
@@ -625,7 +625,9 @@ function nflrc_debug_func() {
 				$debugstr .= "</div>";
 				$debugstr .= "</article>";*/
 		    }
+
 		    wp_reset_postdata();    
+		    $debugstr .= "<h2>" . $count . "</h2>";
 		} else {
 			$output = array(); 
 		}
