@@ -605,7 +605,7 @@ function nflrc_debug_func() {
 		        $post_type = $post->post_type;
 		        $category = $post->category;
 		        // $terms = get_the_term_list($post->ID, 'focus_area');
-		        $oertag = has_term('OER', 'resource_type',);
+		        $oertag = has_term('OER', 'resource_type');
 		        		        
 		        $debugstr .= "<div>{$post_type} | {$p_id} | {$d['oer']} | {$oertag}</div>";
 
