@@ -473,65 +473,6 @@ function nflrc_item_categories_func() {
 	return $html;
 }
 
-add_shortcode('nflrc_debug', 'nflrc_debug_func');
-function nflrc_debug_func() {
-		// $t = '2018-2022';
-		$args = array(
-		    'post_type' => array('project', 'prodev', 'publication', 'contact', 'story'),
-		    'tax_query' => array(
-		    	array(
-		    		'taxonomy' => 'focus_area',
-            		'field'    => 'term_id',
-		    		'terms'    => array(19),
-		    	),
-		    ),
-		    'posts_per_page' 	=> -1,
-		);
-		$the_query = new WP_Query( $args );
-		$output = array();
-		$debugstr = "";
-		$debugstr .= "<h2>" . $the_query->post_count . "</h2>";
-		if ( $the_query->have_posts() ) {
-			global $post;
-		    while ( $the_query->have_posts() ) {
-		        $the_query->the_post();
-		        $title = $post->post_title;
-		        $p_id = strval($post->ID);
-		        $output[$p_id] = $title;
-		        
-		        $post_type = $post->post_type;
-		        $category = $post->category;
-		        $terms = get_the_term_list($post->ID, 'focus_area');
-		        
-		        // if($category) {
-		        // 	$term_ids = wp_set_post_terms($post->ID, $category, 'resource_type', true);
-		        // }
-		        
-		        // update_post_meta( $p_id, 'nflrc_staff', false );
-		        // $post->nflrc_staff = false;
-		        // $is_staff = $post->nflrc_staff;
-
-		        // wp_set_post_categories( $post->ID, 154, true );
-		        
-		        $debugstr .= "<div>{$post_type} | {$category} | {$title} | {$p_id} | {$terms} | {}</div>";
-
-		        /*$debugstr .= "<article class='grid_block'>";
-				$debugstr .= "<div>{}</div>";
-				$debugstr .= "<div class='card'>";
-				$debugstr .= "<div class='block_title'>{}</div>";
-				$debugstr .= "<div class='block_body'>{}</div>";
-				$debugstr .= "<div class='block_footer'>{}</div>";
-				$debugstr .= "</div>";
-				$debugstr .= "</article>";*/
-		    }
-		    wp_reset_postdata();    
-		} else {
-			$output = array(); 
-		}
-		// var_dump($output);
-		return $debugstr;
-}
-
 add_shortcode('nflrc_mod_all_post_dates', 'nflrc_mod_post_dates_func');
 function nflrc_mod_post_dates_func() {
 		global $wpdb;
@@ -553,7 +494,7 @@ function nflrc_mod_post_dates_func() {
 		        // $title = $post->post_title;
 		        // $p_id = $post->ID;
 		        // $grant = $post->grant_cycle;
-		        $wpdb->query("UPDATE $wpdb->posts SET post_date = '2000-01-01 00:00:00.000000', post_date_gmt = '2000-01-01 00:00:00.000000'  WHERE ID = {$post->ID}");
+		        // $wpdb->query("UPDATE $wpdb->posts SET post_date = '2000-01-01 00:00:00.000000', post_date_gmt = '2000-01-01 00:00:00.000000'  WHERE ID = {$post->ID}");
 		        
 		        	        
 		        $debugstr .= "<div>{$d['cycle']} | {$d['title']} | </div>";
@@ -644,7 +585,46 @@ function nflrc_dump_post_info_func() {
 		return $debugstr;
 }
 
+add_shortcode('nflrc_debug', 'nflrc_debug_func');
+function nflrc_debug_func() {
+		// $t = '2018-2022';
+		$args = array(
+		    'post_type' => array('publication'),
+		    'posts_per_page' 	=> -1,
+		);
+		$the_query = new WP_Query( $args );
+		$output = array();
+		$debugstr = "";
+		$debugstr .= "<h2>" . $the_query->post_count . "</h2>";
+		if ( $the_query->have_posts() ) {
+			global $post;
+		    while ( $the_query->have_posts() ) {
+		        $the_query->the_post();
+		        
+		        $d = $read_nflrc_fields($post)
+		        $post_type = $post->post_type;
+		        $category = $post->category;
+		        $terms = get_the_term_list($post->ID, 'focus_area');
+		        $oertag = has_term('OER', 'resource_type',)
+		        		        
+		        $debugstr .= "<div>{$post_type} | {$p_id} | {$d['oer']} | {$oertag}</div>";
 
+		        /*$debugstr .= "<article class='grid_block'>";
+				$debugstr .= "<div>{}</div>";
+				$debugstr .= "<div class='card'>";
+				$debugstr .= "<div class='block_title'>{}</div>";
+				$debugstr .= "<div class='block_body'>{}</div>";
+				$debugstr .= "<div class='block_footer'>{}</div>";
+				$debugstr .= "</div>";
+				$debugstr .= "</article>";*/
+		    }
+		    wp_reset_postdata();    
+		} else {
+			$output = array(); 
+		}
+		// var_dump($output);
+		return $debugstr;
+}
 /*Set taxonomy term for a post
 wp_set_post_terms
 

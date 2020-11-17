@@ -28,7 +28,6 @@ function dp_dfg_custom_query_function($query, $props) {
             'posts_per_page' => -1,
             'meta_query' => array(            	
             	array('key'=>'nflrc_role_type','compare'=>'==','value'=>'COLLAB'),
-            	// array('key'=>'nflrc_role_type','compare'=>'!=','value'=>''),
             ),
         );
     } 
@@ -71,7 +70,7 @@ function dpdfg_after_read_more($content, $props) {
         $html .=    "</div>"; 
         $html .=    "<div class='tags'><p>";
         $html .=        "<p>" . get_the_term_list($p->ID, 'focus_area', ' ', ' ') . "</p>";
-        $html .=        "<p>{$p_type}</p>";//"<p><i class='fas fa-book-open 1x'></i>";
+        $html .=        "<p>{$p_type}</p>";
         $html .=    "</p></div>";
         $html .= "</div></div>"; 
 
