@@ -598,6 +598,7 @@ function nflrc_debug_func() {
 		$debugstr .= "<h2>" . $the_query->post_count . "</h2>";
 		if ( $the_query->have_posts() ) {
 			global $post;
+			$count = 0;
 		    while ( $the_query->have_posts() ) {
 		        $the_query->the_post();
 		        
@@ -606,12 +607,14 @@ function nflrc_debug_func() {
 		        $category = $post->category;
 		        // $terms = get_the_term_list($post->ID, 'focus_area');
 		        $oertag = has_term('OER', 'resource_type');
-		        if ($oertag) {		        
-		        	update_post_meta( $post->ID, 'is_oer', true );
+		        if ($d['oer']) {	
+		        	$count = $count + 1;        
+		        	// update_post_meta( $post->ID, 'is_oer', true );
+		        	$debugstr .= "<div>{$post_type} | {$p_id} | {$d['oer']} | {$oertag}</div>";
 		        } else {
-		        	update_post_meta( $post->ID, 'is_oer', false );
+		        	// update_post_meta( $post->ID, 'is_oer', false );
 		        }
-		        $debugstr .= "<div>{$post_type} | {$p_id} | {$d['oer']} | {$oertag}</div>";
+		        $debugstr .= "<h2>" . $count . "</h2>";
 
 		        /*$debugstr .= "<article class='grid_block'>";
 				$debugstr .= "<div>{}</div>";
