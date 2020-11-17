@@ -588,40 +588,40 @@ function nflrc_dump_post_info_func() {
 add_shortcode('nflrc_debug', 'nflrc_debug_func');
 function nflrc_debug_func() {
 		// $t = '2018-2022';
-		$args = array(
-		    'post_type' => array('publication'),
-		    'posts_per_page' 	=> -1,
-		);
-		$the_query = new WP_Query( $args );
-		$output = array();
+		// $args = array(
+		//     'post_type' => array('publication'),
+		//     'posts_per_page' 	=> -1,
+		// );
+		// $the_query = new WP_Query( $args );
+		// $output = array();
 		$debugstr = "";
-		$debugstr .= "<h2>" . $the_query->post_count . "</h2>";
-		if ( $the_query->have_posts() ) {
-			global $post;
-		    while ( $the_query->have_posts() ) {
-		        $the_query->the_post();
+		// $debugstr .= "<h2>" . $the_query->post_count . "</h2>";
+		// if ( $the_query->have_posts() ) {
+		// 	global $post;
+		//     while ( $the_query->have_posts() ) {
+		//         $the_query->the_post();
 		        
-		        $d = $read_nflrc_fields($post)
-		        $post_type = $post->post_type;
-		        $category = $post->category;
-		        // $terms = get_the_term_list($post->ID, 'focus_area');
-		        $oertag = has_term('OER', 'resource_type');
+		//         $d = $read_nflrc_fields($post)
+		//         $post_type = $post->post_type;
+		//         $category = $post->category;
+		//         // $terms = get_the_term_list($post->ID, 'focus_area');
+		//         $oertag = has_term('OER', 'resource_type');
 		        		        
-		        $debugstr .= "<div>{$post_type} | {$p_id} | {$d['oer']} | {$oertag}</div>";
+		//         $debugstr .= "<div>{$post_type} | {$p_id} | {$d['oer']} | {$oertag}</div>";
 
-		        /*$debugstr .= "<article class='grid_block'>";
-				$debugstr .= "<div>{}</div>";
-				$debugstr .= "<div class='card'>";
-				$debugstr .= "<div class='block_title'>{}</div>";
-				$debugstr .= "<div class='block_body'>{}</div>";
-				$debugstr .= "<div class='block_footer'>{}</div>";
-				$debugstr .= "</div>";
-				$debugstr .= "</article>";*/
-		    }
-		    wp_reset_postdata();    
-		} else {
-			$output = array(); 
-		}
+		//         /*$debugstr .= "<article class='grid_block'>";
+		// 		$debugstr .= "<div>{}</div>";
+		// 		$debugstr .= "<div class='card'>";
+		// 		$debugstr .= "<div class='block_title'>{}</div>";
+		// 		$debugstr .= "<div class='block_body'>{}</div>";
+		// 		$debugstr .= "<div class='block_footer'>{}</div>";
+		// 		$debugstr .= "</div>";
+		// 		$debugstr .= "</article>";*/
+		//     }
+		//     wp_reset_postdata();    
+		// } else {
+		// 	$output = array(); 
+		// }
 		// var_dump($output);
 		return $debugstr;
 }
