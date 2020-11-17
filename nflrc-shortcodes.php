@@ -601,7 +601,7 @@ function nflrc_debug_func() {
 		    while ( $the_query->have_posts() ) {
 		        $the_query->the_post();
 		        
-		        $d = read_nflrc_fields($post)
+		        $d = read_nflrc_fields($post);
 		        $post_type = $post->post_type;
 		        $category = $post->category;
 		        // $terms = get_the_term_list($post->ID, 'focus_area');
