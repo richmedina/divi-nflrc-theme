@@ -588,12 +588,12 @@ function nflrc_dump_post_info_func() {
 add_shortcode('nflrc_debug', 'nflrc_debug_func');
 function nflrc_debug_func() {
 		// $t = '2018-2022';
-		// $args = array(
-		//     'post_type' => array('publication'),
-		//     'posts_per_page' 	=> -1,
-		// );
-		// $the_query = new WP_Query( $args );
-		// $output = array();
+		$args = array(
+		    'post_type' => array('publication'),
+		    'posts_per_page' 	=> -1,
+		);
+		$the_query = new WP_Query( $args );
+		$output = array();
 		$debugstr = "";
 		// $debugstr .= "<h2>" . $the_query->post_count . "</h2>";
 		// if ( $the_query->have_posts() ) {
