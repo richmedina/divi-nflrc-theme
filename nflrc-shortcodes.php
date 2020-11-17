@@ -594,7 +594,7 @@ function nflrc_debug_func() {
 		);
 		$the_query = new WP_Query( $args );
 		$output = array();
-		$debugstr = "";
+		$debugstr = "Debugging output ...";
 		$debugstr .= "<h2>" . $the_query->post_count . "</h2>";
 		if ( $the_query->have_posts() ) {
 			global $post;
@@ -610,7 +610,7 @@ function nflrc_debug_func() {
 		        if ($d['oer']) {	
 		        	$count = $count + 1;        
 		        	// update_post_meta( $post->ID, 'is_oer', true );
-		        	$debugstr .= "<div>{$post_type} | {$p_id} | {$d['oer']} | {$oertag}</div>";
+		        	// $debugstr .= "<div>{$post_type} | {$p_id} | {$d['oer']} | {$oertag}</div>";
 		        } else {
 		        	// update_post_meta( $post->ID, 'is_oer', false );
 		        }
@@ -627,7 +627,7 @@ function nflrc_debug_func() {
 		    }
 
 		    wp_reset_postdata();    
-		    $debugstr .= "<h2>" . $count . "</h2>";
+		    // $debugstr .= "<h2>" . $count . "</h2>";
 		} else {
 			$output = array(); 
 		}
