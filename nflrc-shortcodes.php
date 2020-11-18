@@ -615,6 +615,12 @@ function nflrc_debug_func() {
 		        	foreach ( $tags as $term ) {
 		        		$liststr .= "{$term->name}, ";
 		        	}
+					// $my_post = array(
+			  //     		'ID'       => $post->ID,
+			  //     		'cfield'   => $liststr,
+			  //     	);
+			      	update_post_meta( $post->ID, 'tag_history', $liststr );	
+
 		        	$debugstr .= "{$post->ID} | {$liststr} </div>";
 		        } else {
 
