@@ -617,7 +617,7 @@ function nflrc_debug_func() {
 		        	$debugstr .= "{$post->ID} | {$liststr} </div>";
 		        } else {
 
-		        	$debugstr .= "no tags {$tags}";
+		        	$debugstr .= "no tags"
 		        	// update_post_meta( $post->ID, 'is_oer', false );
 		        }
 		        
