@@ -616,6 +616,8 @@ function nflrc_debug_func() {
 		        	}
 		        	$debugstr .= "</div>";
 		        } else {
+
+		        	$debugstr .= "no tags {$tags}";
 		        	// update_post_meta( $post->ID, 'is_oer', false );
 		        }
 		        
