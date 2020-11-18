@@ -611,6 +611,7 @@ function nflrc_debug_func() {
 		        	$count = $count + 1;        
 		        	// update_post_meta( $post->ID, 'is_oer', true );
 		        	$debugstr .= "<div>";
+		        	$liststr = "";
 		        	foreach ( $tags as $term ) {
 		        		$liststr .= "{$term->name}, ";
 		        	}
