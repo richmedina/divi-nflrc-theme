@@ -610,7 +610,7 @@ function nflrc_debug_func() {
 		        if ($tags) {	
 		        	$count = $count + 1;        
 		        	// update_post_meta( $post->ID, 'is_oer', true );
-		        	$debugstr .= "<div>";
+		        	$debugstr .= "<div>==>";
 		        	foreach ( $tags as $term ) {
 		        		$debugstr .= "<span>==> {$term} </div>";
 		        	}
@@ -633,7 +633,7 @@ function nflrc_debug_func() {
 		    }
 
 		    wp_reset_postdata();    
-		    // $debugstr .= "<h2>" . $count . "</h2>";
+		    $debugstr .= "<h2>" . $count . "</h2>";
 		} else {
 			$output = array(); 
 		}
