@@ -612,9 +612,9 @@ function nflrc_debug_func() {
 		        	// update_post_meta( $post->ID, 'is_oer', true );
 		        	$debugstr .= "<div>";
 		        	foreach ( $tags as $term ) {
-		        		$debugstr .= "<span>{$term->name} </div>";
+		        		$liststr .= "{$term->name}, ";
 		        	}
-		        	$debugstr .= "</div>";
+		        	$debugstr .= "{$liststr} </div>";
 		        } else {
 
 		        	$debugstr .= "no tags {$tags}";
