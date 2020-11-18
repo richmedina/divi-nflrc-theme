@@ -567,7 +567,7 @@ function import_csv_apa_cites_func($atts, $content = null) {
 			$count += 1;
 			global $post;
 		    $posts->the_post();
-		    update_post_meta( $post->ID, 'apa_citation', $value[1] );
+		    // update_post_meta( $post->ID, 'apa_citation', $value[1] );
 		    $output .= "<div>{$post->ID} {$value[0]} {$value[1]}</div>";
 		}
 		wp_reset_postdata();
