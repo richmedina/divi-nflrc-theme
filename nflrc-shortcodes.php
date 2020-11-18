@@ -610,9 +610,9 @@ function nflrc_debug_func() {
 		        if ($tags) {	
 		        	$count = $count + 1;        
 		        	// update_post_meta( $post->ID, 'is_oer', true );
-		        	$debugstr .= "<div>==>";
+		        	$debugstr .= "<div>";
 		        	foreach ( $tags as $term ) {
-		        		$debugstr .= "<span>==> {$term->name} </div>";
+		        		$debugstr .= "<span>{$term->name} </div>";
 		        	}
 		        	$debugstr .= "</div>";
 		        } else {
