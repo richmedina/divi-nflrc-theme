@@ -614,7 +614,7 @@ function nflrc_debug_func() {
 		        	foreach ( $tags as $term ) {
 		        		$liststr .= "{$term->name}, ";
 		        	}
-		        	$debugstr .= "{$liststr} </div>";
+		        	$debugstr .= "{$post->ID} | {$liststr} </div>";
 		        } else {
 
 		        	$debugstr .= "no tags {$tags}";
