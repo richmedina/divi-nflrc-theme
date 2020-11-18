@@ -589,7 +589,7 @@ add_shortcode('nflrc_debug', 'nflrc_debug_func');
 function nflrc_debug_func() {
 		// $t = '2018-2022';
 		$args = array(
-		    'post_type' => array('publication'),
+		    'post_type' => array('project', 'prodev', 'publication', 'contact', 'story'),
 		    'posts_per_page' 	=> -1,
 		);
 		$the_query = new WP_Query( $args );
@@ -605,12 +605,12 @@ function nflrc_debug_func() {
 		        $d = read_nflrc_fields($post);
 		        $post_type = $post->post_type;
 		        $category = $post->category;
-		        // $terms = get_the_term_list($post->ID, 'focus_area');
-		        $oertag = has_term('OER', 'resource_type');
-		        if ($d['oer']) {	
+		        $tags = get_the_terms($post->ID, $post->ID, ['focus_area', 'language', 'professional_learning', 'resource_type', 'grant_period']);
+		        // $oertag = has_term('OER', 'resource_type');
+		        if ($tags) {	
 		        	$count = $count + 1;        
 		        	// update_post_meta( $post->ID, 'is_oer', true );
-		        	// $debugstr .= "<div>{$post_type} | {$p_id} | {$d['oer']} | {$oertag}</div>";
+		        	$debugstr .= "<div>{$p_id} | {$tags}</div>";
 		        } else {
 		        	// update_post_meta( $post->ID, 'is_oer', false );
 		        }
