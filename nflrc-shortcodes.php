@@ -426,7 +426,7 @@ function nflrc_meta_display_func() {
 		$html .= "<p>{$d['author']}</p>";
 		$resource_type = get_the_term_list($post->ID, 'resource_type', ' ', '|');
 		if ($resource_type) $html .= "<p>Type: {$resource_type}</p>";
-		if ($d['apa_citation']) $.html .= "<p>{$d['apa_citation']}</p>";
+		if ($d['apa_citation']) $html .= "<p>{$d['apa_citation']}</p>";
 		
 		$html .= "<p><ul>";
 		if ($d['url']) $html .= "<li><button class='buttoned'><a href='{$d['url']}' target='_blank'>Access <i class='fas fa-external-link-alt'></i></a></button></li>";
