@@ -411,9 +411,9 @@ add_shortcode('nflrc_meta_display', 'nflrc_meta_display_func');
 function nflrc_meta_display_func() {
 	global $post;
 	$d = read_nflrc_fields($post);
-	$html = "<div class='fb-like' data-href='https://nflrc.hawaii.edu' data-width=' data-layout='standard' data-action='like' data-size='small' data-share='true'></div>";
 	$here = get_the_permalink();
-	$html .= "<div class='item-meta-list'>{$here}";	
+	$html = "<div class='fb-like' data-href='{$here}' data-width=' data-layout='standard' data-action='like' data-size='small' data-share='true'></div>";	
+	$html .= "<div class='item-meta-list'>";	
 
 	if($d['post_type'] === 'project') {
 		$grant_cycle = get_the_term_list($post->ID, 'grant_period', ' ', '|');
