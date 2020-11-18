@@ -544,7 +544,44 @@ function import_csv_post_dates_func($atts, $content = null) {
   }
 }
 
+add_shortcode('import_csv_apa_cites', 'import_csv_apa_cites_func');
+function import_csv_apa_cites_func($atts, $content = null) {
+  
+  if (isset($_POST['submit'])) {
+    $csv_file = $_FILES['csv_file'];
+    $csv_to_array = array_map('str_getcsv', file($csv_file['tmp_name']));
+	$output = "";
+	$count = 0;
+    foreach ($csv_to_array as $key => $value) {
+    	// var_dump($value);
+    	// [0]6, [1]"project", [2]"1996-08-01 00:00:00.000000"
+		$args = array(
+			'post_type'      	=> 'publication',
+			'meta_key'       	=> 'item_number',
+			'meta_value'		=> $value[0],
+		    'numberposts' 		=> 1,
+		);
+		$posts = new WP_Query($args);
 
+		if ( $posts->have_posts() ) {
+			$count += 1;
+			global $post;
+		    $posts->the_post();
+		    // update_post_meta( $post->ID, 'apa_citation', $value[1] );
+		    $output .= "<div>{$post->ID} {$value[0]} {$value[1]}</div>";
+		}
+		wp_reset_postdata();
+	}
+	$output .= $count;
+	return $output;
+  } else {
+  	echo '<h2>Import apa citations from csv file to write to apa_citation field in publications.</h2>';
+    echo '<form action="" method="post" enctype="multipart/form-data">';
+    echo '<input type="file" name="csv_file">';
+    echo '<input type="submit" name="submit" value="submit">';
+    echo '</form>';
+  }
+}
 add_shortcode('nflrc_dump_post_info', 'nflrc_dump_post_info_func');
 function nflrc_dump_post_info_func() {
 
@@ -619,7 +656,7 @@ function nflrc_debug_func() {
 			  //     		'ID'       => $post->ID,
 			  //     		'cfield'   => $liststr,
 			  //     	);
-			      	update_post_meta( $post->ID, 'tag_history', $liststr );	
+			      	// update_post_meta( $post->ID, 'tag_history', $liststr );	
 
 		        	$debugstr .= "{$post->ID} | {$liststr} </div>";
 		        } else {
