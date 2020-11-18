@@ -605,12 +605,12 @@ function nflrc_debug_func() {
 		        $d = read_nflrc_fields($post);
 		        $post_type = $post->post_type;
 		        $category = $post->category;
-		        $tags = get_the_terms($post->ID, ['focus_area', 'language', 'professional_learning', 'resource_type', 'grant_period']);
+		        $tags = get_the_term_list($post->ID, ['focus_area', 'language', 'professional_learning', 'resource_type', 'grant_period']);
 		        // $oertag = has_term('OER', 'resource_type');
 		        if ($tags) {	
 		        	$count = $count + 1;        
 		        	// update_post_meta( $post->ID, 'is_oer', true );
-		        	$debugstr .= "<div>{$p_id} | {$tags}</div>";
+		        	$debugstr .= "<div>{$post->ID} | {$tags}</div>";
 		        } else {
 		        	// update_post_meta( $post->ID, 'is_oer', false );
 		        }
