@@ -472,7 +472,7 @@ add_shortcode('nflrc_item_categories', 'nflrc_item_categories_func');
 function nflrc_item_categories_func() {
 	global $post;
 	
-    $html .=    "<div class='tags' style='text-align: left;'>";
+    $html .=    "<div class='cats'>";
     $html .=    	get_the_term_list($post->ID, 'category', ' ', ' ');
     $html .=    "</div>";
 	return $html;
