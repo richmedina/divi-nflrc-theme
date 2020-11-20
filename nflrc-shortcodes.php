@@ -427,8 +427,12 @@ function nflrc_meta_display_func() {
 	} else if ($d['post_type'] === 'publication') {
 		
 		$html .= "<p>{$d['author']}</p>";
-		$resource_type = get_the_terms($post->ID, 'resource_type', ' ', '|');
-		if ($resource_type) $html .= "<p>Type: {$resource_type}</p>";
+		$resource_type = get_the_terms($post->ID, 'resource_type');
+		
+		if ($resource_type) {
+			$html .= "<p>";
+			foreach ($resource_type as $term) $html .= " {$term} ";
+			$html .= "</p>";
 		
 		
 		$html .= "<ul class='meta-bar'>";
