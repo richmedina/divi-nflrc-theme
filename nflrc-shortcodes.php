@@ -427,12 +427,12 @@ function nflrc_meta_display_func() {
 	} else if ($d['post_type'] === 'publication') {
 		
 		$html .= "<p>{$d['author']}</p>";
-		$resource_type = get_the_terms($post->ID, ['resource_type']);
-		if ($resource_type) {
-			$html .= "<p>";
-			foreach ($resource_type as $term) $html .= " {$term} ";
-			$html .= "</p>";
-		}
+		// $resource_type = get_the_terms($post->ID, ['resource_type']);
+		// if ($resource_type) {
+		// 	$html .= "<p>";
+		// 	foreach ($resource_type as $term) $html .= " {$term} ";
+		// 	$html .= "</p>";
+		// }
 		
 		$html .= "<ul class='meta-bar'>";
 		if ($d['oer']) $html .= "<li><img src='/wp-content/uploads/2020/09/oer-logo.png' alt='OER logo'></li> ";
