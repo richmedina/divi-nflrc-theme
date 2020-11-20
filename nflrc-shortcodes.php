@@ -434,7 +434,7 @@ function nflrc_meta_display_func() {
 		$html .= "<ul class='meta-bar'>";
 		if ($d['oer']) $html .= "<li><img src='/wp-content/uploads/2020/09/oer-logo.png' alt='OER logo'></li> ";
 		
-		if ($d['oclc_url']) $html .= "<li><a href='{$d['oclc_url']}' target='_blank'><img src='/wp-content/uploads/2020/11/oclc-logo.png' alt='OCLC link'></a></li> ";	
+		if ($d['oclc_url']) $html .= "<li><button class='basic-btn btn-default'><a href='{$d['oclc_url']}' target='_blank'><img src='/wp-content/uploads/2020/11/oclc-logo.png' alt='OCLC link'></a></button></li> ";	
 				
 		if ($d['url']) $html .= "<li><button class='basic-btn btn-default'><a href='{$d['url']}' target='_blank'>Access <i class='fas fa-external-link-alt'></i></a></button></li>";		
 		
