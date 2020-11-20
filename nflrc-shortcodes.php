@@ -431,13 +431,16 @@ function nflrc_meta_display_func() {
 		if ($resource_type) $html .= "<p>Type: {$resource_type}</p>";
 		
 		
-		$html .= "<ul>";
-		if ($d['url']) $html .= "<li><button class='basic-btn btn-default'><a href='{$d['url']}' target='_blank'>Access <i class='fas fa-external-link-alt'></i></a></button></li>";
+		$html .= "<ul class='meta-bar'>";
 		if ($d['oer']) $html .= "<li><img src='/wp-content/uploads/2020/09/oer-logo.png' alt='OER logo'></li> ";
 		
 		if ($d['oclc_url']) $html .= "<li><a href='{$d['oclc_url']}' target='_blank'><img src='/wp-content/uploads/2020/11/oclc-logo.png' alt='OCLC link'></a></li> ";	
-		if ($d['order_url']) $html .= "<li><button class='basic-btn btn-default'><a href='{$d['order_url']}' target='_blank'>Buy</a></button></li> ";
+				
+		if ($d['url']) $html .= "<li><button class='basic-btn btn-default'><a href='{$d['url']}' target='_blank'>Access <i class='fas fa-external-link-alt'></i></a></button></li>";		
+		
 		if ($d['ext_url']) $html .= "<li><button class='basic-btn btn-default'><a href='{$d['ext_url']}' target='_blank'>External URL <i class='fas fa-external-link-alt'></i></a></button></li> ";
+		
+		if ($d['order_url']) $html .= "<li><button class='basic-btn btn-default'><a href='{$d['order_url']}' target='_blank'>Buy</a></button></li> ";
 		$html .= "</ul>";
 
 		if ($d['apa_citation']) $html .= "<p class='citation'>{$d['apa_citation']}</p>";
