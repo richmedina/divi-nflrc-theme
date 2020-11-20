@@ -429,7 +429,7 @@ function nflrc_meta_display_func() {
 		$html .= "<p>{$d['author']}</p>";
 		$resource_type = get_the_term_list($post->ID, 'resource_type', ' ', '|');
 		if ($resource_type) $html .= "<p>Type: {$resource_type}</p>";
-		if ($d['apa_citation']) $html .= "<p>{$d['apa_citation']}</p>";
+		
 		
 		$html .= "<p><ul>";
 		if ($d['url']) $html .= "<li><button class='btn btn-default'><a href='{$d['url']}' target='_blank'>Access <i class='fas fa-external-link-alt'></i></a></button></li>";
@@ -439,6 +439,7 @@ function nflrc_meta_display_func() {
 		if ($d['order_url']) $html .= "<li><button class='btn btn-default'><a href='{$d['order_url']}' target='_blank'>order <i class='fas fa-external-link-alt'></i></a></button></li> ";
 		if ($d['ext_url']) $html .= "<li><button class='btn btn-default'><a href='{$d['ext_url']}' target='_blank'>External URL <i class='fas fa-external-link-alt'></i></a></button></li> ";
 		$html .= "</ul></p>";
+		if ($d['apa_citation']) $html .= "<p>{$d['apa_citation']}</p>";
 
 	} else if ($d['post_type'] === 'prodev') {
 		$html .= "<ul class='stacked'>";
