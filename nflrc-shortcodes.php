@@ -438,7 +438,7 @@ function nflrc_meta_display_func() {
 				
 		if ($d['url']) $html .= "<li><button class='basic-btn btn-default'><a href='{$d['url']}' target='_blank'>Access <i class='fas fa-external-link-alt'></i></a></button></li>";		
 		
-		if ($d['ext_url']) $html .= "<li><button class='basic-btn btn-default'><a href='{$d['ext_url']}' target='_blank'>External URL <i class='fas fa-external-link-alt'></i></a></button></li> ";
+		if ($d['ext_url']) $html .= "<li><button class='basic-btn btn-default'><a href='{$d['ext_url']}' target='_blank'>More Info <i class='fas fa-external-link-alt'></i></a></button></li> ";
 		
 		if ($d['order_url']) $html .= "<li><button class='basic-btn btn-default'><a href='{$d['order_url']}' target='_blank'>Buy</a></button></li> ";
 		$html .= "</ul>";
