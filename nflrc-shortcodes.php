@@ -433,7 +433,7 @@ function nflrc_meta_display_func() {
 			$html .= "<p>";
 			foreach ($resource_type as $term) $html .= " {$term} ";
 			$html .= "</p>";
-		
+		}
 		
 		$html .= "<ul class='meta-bar'>";
 		if ($d['oer']) $html .= "<li><img src='/wp-content/uploads/2020/09/oer-logo.png' alt='OER logo'></li> ";
