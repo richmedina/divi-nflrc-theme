@@ -39,6 +39,10 @@ function dp_dfg_custom_query_function($query, $props) {
             	array('key'=>'nflrc_role_type','value'=>'ADVBOARD'),
             ),
         );
+    }
+    else if (isset($props['admin_label']) && $props['admin_label'] === 'NFLRC Items') {
+        var_dump($query);
+        return $query;
     } 
 }
 add_filter('dpdfg_custom_query_args', 'dp_dfg_custom_query_function', 10, 2);
