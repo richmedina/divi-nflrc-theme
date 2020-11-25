@@ -41,6 +41,7 @@ function dp_dfg_custom_query_function($query, $props) {
         );
     }
     else if (isset($props['admin_label']) && $props['admin_label'] === 'NFLRC Items') {
+        var_dump($props);
         return $query;
     } 
 }
