@@ -42,9 +42,14 @@ function dp_dfg_custom_query_function($query, $props) {
     }
     else if (isset($props['admin_label']) && $props['admin_label'] === 'NFLRC Items') {
         // var_dump(get_post());
+        $page_cat = $props['module_id'];  // Use the string in CSS ID for category filter
         return array(
-            'post_type' => array('project','publication','prodev','contact','story'),
-            'category_name' => 'assessment',
+            'post_type'     => array('project','publication','prodev','contact','story'),
+            'category_name' => $page_cat,
+            'meta_key'      => 'order',
+            'orderby'       => 'meta_value_num',
+            'order'         => 'DESC',
+            'posts_per_page' => 6,            
         );
     }
 }
