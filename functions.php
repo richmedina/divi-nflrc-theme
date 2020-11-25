@@ -68,10 +68,10 @@ function dpdfg_after_read_more($content, $props) {
         // $html .=    "<div>";
         // $html .=        wp_trim_words(get_the_excerpt($p->ID), 20, ' ...');  
         // $html .=    "</div>"; 
-        $html .=    "<div class='tags'><p>";
+        $html .=    "<div class='tags'>";
         $html .=        "<p>" . get_the_term_list($p->ID, 'focus_area', ' ', ' ') . "</p>";
         $html .=        "<p>{$p_type}</p>";
-        $html .=    "</p></div>";
+        $html .=    "</div>";
         // $html .= "</div></div>"; 
 
 
