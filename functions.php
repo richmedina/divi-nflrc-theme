@@ -34,16 +34,19 @@ function dp_dfg_custom_query_function($query, $props) {
     else if (isset($props['admin_label']) && $props['admin_label'] === 'Advisory Board') {
         return array(
             'post_type' => 'contact',
-            'posts_per_page' => -1,
+            'category_name' => -1,
             'meta_query' => array(            	
             	array('key'=>'nflrc_role_type','value'=>'ADVBOARD'),
             ),
         );
     }
     else if (isset($props['admin_label']) && $props['admin_label'] === 'NFLRC Items') {
-        // var_dump($props);
-        return $query;
-    } 
+        var_dump(get_the_ID());
+        return array(
+            'post_type' => array('project','publication','prodev','contact','story'),
+            'category_name' => 'assessment',
+        );
+    }
 }
 add_filter('dpdfg_custom_query_args', 'dp_dfg_custom_query_function', 10, 2);
 
