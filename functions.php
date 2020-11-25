@@ -48,8 +48,8 @@ function dp_dfg_custom_query_function($query, $props) {
         return array(
             'post_type'     => array('project','publication','prodev','contact','story'),
             'category_name' => 'assessment',
-            // 'meta_key'      => 'menu_order',
-            'orderby'       => 'menu_order',
+            'meta_key'      => 'is_featured',
+            'orderby'       => 'meta_value_num menu_order date',
             'order'         => 'DESC',
             'posts_per_page' => 6,            
         );
