@@ -61,18 +61,18 @@ function dpdfg_after_read_more($content, $props) {
         $p_type = $p->post_type;
         $p_title = wp_trim_words($p->post_title, 8, ' ...');
 
-        $html = "<div class='item-content-wrapper'><div class='item-content'>";
-        $html .=    "<div>";
-        $html .=        "<h4> {$p_title} </h4>";  
-        $html .=    "</div>"; 
-        $html .=    "<div>";
-        $html .=        wp_trim_words(get_the_excerpt($p->ID), 20, ' ...');  
-        $html .=    "</div>"; 
+        // $html = "<div class='item-content-wrapper'><div class='item-content'>";
+        // $html .=    "<div>";
+        // $html .=        "<h4> {$p_title} </h4>";  
+        // $html .=    "</div>"; 
+        // $html .=    "<div>";
+        // $html .=        wp_trim_words(get_the_excerpt($p->ID), 20, ' ...');  
+        // $html .=    "</div>"; 
         $html .=    "<div class='tags'><p>";
         $html .=        "<p>" . get_the_term_list($p->ID, 'focus_area', ' ', ' ') . "</p>";
         $html .=        "<p>{$p_type}</p>";
         $html .=    "</p></div>";
-        $html .= "</div></div>"; 
+        // $html .= "</div></div>"; 
 
 
         return $html;
