@@ -41,18 +41,16 @@ function dp_dfg_custom_query_function($query, $props) {
         );
     }
     else if (isset($props['admin_label']) && $props['admin_label'] === 'NFLRC Items') {
-        // var_dump(get_post());
         $page_cat = $props['module_id'];  // Use the string in CSS ID for category filter
-        var_dump($page_cat);
-
-        return array(
+        $cat_query = array(
             'post_type'     => array('project','publication','prodev','contact','story'),
             'category_name' => $page_cat,
-            'meta_key'      => 'featured',
-            'orderby'       => 'meta_value_num menu_order date',
+            'tag__not_in'   => array( 146 ), // Exclude any post tagged as featured
+            'orderby'       => 'menu_order date',
             'order'         => 'DESC',
             'posts_per_page' => -1,            
         );
+        return $cat_query;
     }
 }
 add_filter('dpdfg_custom_query_args', 'dp_dfg_custom_query_function', 10, 2);
