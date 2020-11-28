@@ -34,7 +34,7 @@ function dp_dfg_custom_query_function($query, $props) {
     else if (isset($props['admin_label']) && $props['admin_label'] === 'Advisory Board') {
         return array(
             'post_type' => 'contact',
-            'category_name' => -1,
+            'posts_per_page' => -1,
             'meta_query' => array(            	
             	array('key'=>'nflrc_role_type','value'=>'ADVBOARD'),
             ),
