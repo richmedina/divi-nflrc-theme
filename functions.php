@@ -83,8 +83,25 @@ function dpdfg_after_read_more($content, $props) {
     if (isset($props['admin_label']) && $props['admin_label'] === 'NFLRC Items') {
         $p = get_post();
         $p_type = $p->post_type;
-        $p_title = wp_trim_words($p->post_title, 8, ' ...');
+        $html .= "<div class='tags'>";
+        $html .=    "<p>" . get_the_term_list($p->ID, ['focus_area', 'language', 'professional_learning', 'resource_type', 'grant_period'], '', ' ', '') . "</p>";
+        $html .= "</div>";
+        return $html;
+    }
+    else if (isset($props['admin_label']) && $props['admin_label'] === 'NFLRC Events') {
+        $p = get_post();
+        $p_type = $p->post_type;
+        $html .= "<div class='tags'>";
+        $html .=    "<p>" . get_the_term_list($p->ID, ['focus_area', 'language', 'professional_learning', 'resource_type', 'grant_period'], '', ' ', '') . "</p>";
+        $html .= "</div>";
+        return $html;
+    } 
+}
+add_filter('dpdfg_after_read_more', 'dpdfg_after_read_more', 10, 2);
 
+
+
+/* Snippets */
         // $html = "<div class='item-content-wrapper'><div class='item-content'>";
         // $html .=    "<div>";
         // $html .=        "<h4> {$p_title} </h4>";  
@@ -92,15 +109,4 @@ function dpdfg_after_read_more($content, $props) {
         // $html .=    "<div>";
         // $html .=        wp_trim_words(get_the_excerpt($p->ID), 20, ' ...');  
         // $html .=    "</div>"; <span>{$p->menu_order}</span>
-
-        $html .=    "<div class='tags'>";
-        $html .=        "<p>" . get_the_term_list($p->ID, ['focus_area', 'language', 'professional_learning', 'resource_type', 'grant_period'], '', ' ', '') . "</p>";
-        // $html .=        "<p>{$p_type}</p>";
-        $html .=    "</div>";
         // $html .= "</div></div>"; 
-
-
-        return $html;
-    } 
-}
-add_filter('dpdfg_after_read_more', 'dpdfg_after_read_more', 10, 2);
