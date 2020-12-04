@@ -42,7 +42,7 @@ function dp_dfg_custom_query_function($query, $props) {
     }
     else if (isset($props['admin_label']) && $props['admin_label'] === 'NFLRC Items') {
         $page_cat = $props['module_id'];  // Use the string in CSS ID for category filter
-        var_dump($page_cat);
+        // var_dump($page_cat);
         $cat_query = array(
             'post_type'     => array('project','publication','prodev','contact','story'),
             'category_name' => $page_cat,
@@ -52,17 +52,6 @@ function dp_dfg_custom_query_function($query, $props) {
             'posts_per_page' => -1,            
         );
         return $cat_query;
-    }
-    else if (isset($props['admin_label']) && $props['admin_label'] === 'NFLRC Events') {
-        $cal_query = array(
-            'post_type'     => array('prodev'),
-            'meta_key'      => 'event_datestamp',
-            'meta_type'     => 'DATE',
-            'orderby'       => 'meta_value date',
-            'order'         => 'DESC',
-            'posts_per_page' => -1,            
-        );
-        return $cal_query;
     }
 }
 add_filter('dpdfg_custom_query_args', 'dp_dfg_custom_query_function', 10, 2);
