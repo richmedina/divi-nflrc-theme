@@ -65,6 +65,12 @@ function featured_img_func($atts, $content = null) {
     return get_the_post_thumbnail();
 }
 
+add_shortcode('today', 'today_func');
+function today_func($atts, $content = null) {
+	$d = date('d');
+    return $d;
+}
+
 add_shortcode('post_excerpt', 'post_excerpt_func');
 function post_excerpt_func($atts, $content = null) {
     $a = shortcode_atts( array(
