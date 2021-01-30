@@ -36,6 +36,7 @@ function read_nflrc_fields($post) {
 		$fields['facilitator'] = $post->facilitator;
 		$fields['director'] = $post->director;
 		$fields['event_type'] = $post->event_type;
+		$fields['url'] = $post->url;
 
 	} else if($post_type === 'contact') {
 		$fields['nflrc_role'] = $post->nflrc_role;
