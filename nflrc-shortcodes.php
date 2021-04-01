@@ -459,7 +459,7 @@ function nflrc_meta_display_func() {
 		$html .= "<ul class='stacked'>";
 		$html .= "<li>{$d['event_date']}</li>";
 		$html .= "<li>Director(s): {$d['director']}</li>";
-		if ($d['facilitator']) $html .= "<li>Facilitor(s): {$d['facilitator']}</li>";
+		if ($d['facilitator']) $html .= "<li>Facilitator(s): {$d['facilitator']}</li>";
 		if ($d['url']) $html .= "<li><a href='{$d['url']}' target='_blank'>More info</a></li>";
 		
 		$html .= "</ul>";
