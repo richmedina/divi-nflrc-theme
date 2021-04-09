@@ -42,7 +42,7 @@ function dp_dfg_custom_query_function($query, $props) {
     }
     else if (isset($props['admin_label']) && $props['admin_label'] === 'NFLRC Items') {
         $page_cat = $props['module_id'];  // Use the string in CSS ID for category filter
-        // var_dump($page_cat);
+        var_dump($page_cat);
         $cat_query = array(
             'post_type'     => array('project','publication','prodev','contact','story'),
             'category_name' => $page_cat,
