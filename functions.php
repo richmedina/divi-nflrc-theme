@@ -47,7 +47,7 @@ function dp_dfg_custom_query_function($query, $props) {
             'post_type'     => array('project','publication','prodev','contact','story'),
             'category_name' => $page_cat,
             // 'tag__not_in'   => array( 146 ), // Exclude any post tagged as featured
-            'orderby'       => array('menu_order' => 'ASC', 'date' => 'DESC'),
+            'orderby'       => array( 'date' => 'DESC'),
             // 'order'         => 'DESC',
             'posts_per_page' => -1,            
         );
