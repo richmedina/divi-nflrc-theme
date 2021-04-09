@@ -72,7 +72,7 @@ function dpdfg_after_read_more($content, $props) {
     if (isset($props['admin_label']) && $props['admin_label'] === 'NFLRC Items') {
         $p = get_post();
         $p_type = $p->post_type;
-        $html .= "<div class='tags'>";
+        $html .= "<div class='tags' title='" . $p->menu_order . "'>";
         $html .=    "<p>" . get_the_term_list($p->ID, ['focus_area', 'language', 'professional_learning', 'resource_type', 'grant_period'], '', ' ', '') . "</p>";
         $html .= "</div>";
         return $html;
