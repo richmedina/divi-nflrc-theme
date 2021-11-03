@@ -40,6 +40,19 @@ function dp_dfg_custom_query_function($query, $props) {
             ),
         );
     }
+    else if (isset($props['admin_label']) && $props['admin_label'] === 'NFLRC Language Items') {
+        $page_cat = $props['module_id'];  // Use the string in CSS ID for category filter
+        // var_dump($page_cat);
+        $cat_query = array(
+            'post_type'     => array('project','publication','prodev','story'),
+            'category_name' => $page_cat,
+            // 'tag__not_in'   => array( 146 ), // Exclude any post tagged as featured
+            'orderby'       => array('date' => 'DESC'), //'menu_order' => 'DESC', 
+            // 'order'         => 'DESC',
+            'posts_per_page' => -1,            
+        );
+        return $cat_query;
+    }
     else if (isset($props['admin_label']) && $props['admin_label'] === 'NFLRC Items') {
         $page_cat = $props['module_id'];  // Use the string in CSS ID for category filter
         // var_dump($page_cat);
