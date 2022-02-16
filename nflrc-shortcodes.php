@@ -426,7 +426,7 @@ function nflrc_meta_display_func() {
 		$grant_cycle = get_the_term_list($post->ID, 'grant_period', ' ', '|');
 		$languages = get_the_term_list($post->ID, 'language', ' ', '|');
 		$html .= "<ul class='stacked'>";
-		$html .= "<li>Project Director(s): {$d['director']}</li>";
+		$html .= "<li>Project Lead(s): {$d['director']}</li>";
 		$html .= "<li>Period: {$grant_cycle}</li>";
 		$html .= "<li>{$languages}</li>";
 		$html .= "</ul>";
@@ -458,7 +458,7 @@ function nflrc_meta_display_func() {
 	} else if ($d['post_type'] === 'prodev') {
 		$html .= "<ul class='stacked'>";
 		$html .= "<li>{$d['event_date']}</li>";
-		$html .= "<li>Director(s): {$d['director']}</li>";
+		$html .= "<li>Project Lead(s): {$d['director']}</li>";
 		if ($d['facilitator']) $html .= "<li>Facilitator(s): {$d['facilitator']}</li>";
 		if ($d['url']) $html .= "<li><a href='{$d['url']}' target='_blank'>More info</a></li>";
 		
