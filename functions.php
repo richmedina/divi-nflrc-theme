@@ -27,7 +27,7 @@ function dp_dfg_custom_query_function($query, $props) {
             'post_type' => 'contact',
             'posts_per_page' => -1,
             // 'meta_key'          => 'featured_rank',
-            'orderby'       => 'order',  
+            'orderby'       => array('menu_order' => 'ASC'),  
             'meta_query' => array(            	
             	array('key'=>'nflrc_role_type','compare'=>'==','value'=>'COLLAB'),
             ),
